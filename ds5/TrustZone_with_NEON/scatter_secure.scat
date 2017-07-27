@@ -1,0 +1,34 @@
+;**************************************************
+; Copyright (c) 2012 ARM Ltd.  All rights reserved.
+;**************************************************
+
+SECURE_LOAD 0x80000000 0x00500000
+{
+  SECURE_EXE +0
+  {
+   startup_secure.o(SecureStartUp, +FIRST)
+    * (+RO, +RW, +ZI)
+  }
+
+  ARM_LIB_STACKHEAP  0x800A0000 EMPTY 0x2000   {}
+
+  MON_STACK          0x800C0000 EMPTY 0x1000   {}
+
+  SECURE_PAGETABLES  0x800F0000 EMPTY 0x010000 {}
+
+  ; 1MB Buffer
+  SECURE_BUFFER 0x80300000 EMPTY 0x00100000 {}
+
+  BP147_TZPC 0x100E6000 UNINIT
+  {
+    bp147_tzpc.o (+ZI) ; struct for BP147 registers
+  }
+}
+
+NORMAL_IMAGE 0x80600000 0x100000
+{
+  NORMAL_IMAGE +0
+  {
+    startup_secure.o(NORMAL_IMAGE)
+  }
+}

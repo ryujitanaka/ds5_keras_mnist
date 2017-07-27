@@ -1,0 +1,16 @@
+;**************************************************
+; Copyright (c) 2012 ARM Ltd.  All rights reserved.
+;**************************************************
+
+NORMAL_LOAD 0x80600000
+{
+  NORMAL_EXE 0x80600000 0xA0000
+  {
+    startup_normal.o(NormalStartUp, +FIRST)
+    * (+RO, +RW, +ZI)
+  }
+
+  ARM_LIB_STACKHEAP 0x806A0000 EMPTY 0x2000 {}
+
+  NORMAL_PAGETABLES 0x806F0000 EMPTY 0x10000 {}  
+}

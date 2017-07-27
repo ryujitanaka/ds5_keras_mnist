@@ -1,0 +1,4 @@
+set var $pc = S:0x8000023C
+source "C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\image_import.py"
+wait
+continue

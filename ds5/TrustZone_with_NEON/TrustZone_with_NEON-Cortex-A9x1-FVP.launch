@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.arm.debugger.launcher2">
+<stringAttribute key="4107940821804793602.viewid=2" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;page&gt;&#10;&#9;&lt;memoryView displayWidthTag=&quot;BYTE_4&quot; formatTag=&quot;ﾌﾛｰﾄ&quot;/&gt;&#10;&lt;/page&gt;&#10;"/>
+<stringAttribute key="ANDROID_ACTIVITY_NAME" value=""/>
+<stringAttribute key="ANDROID_APPLICATION" value=""/>
+<stringAttribute key="ANDROID_APP_DIR" value=""/>
+<booleanAttribute key="ANDROID_KILL_IF_RUNNING" value="true"/>
+<stringAttribute key="ANDROID_PROCESS_NAME" value=""/>
+<booleanAttribute key="ANDROID_TRY_ROOT" value="true"/>
+<mapAttribute key="AverageDurationTracker">
+<mapEntry key="*Fetching Data Model" value="5787214"/>
+<mapEntry key="*FunctionLoader" value="27627409"/>
+<mapEntry key="*list global low level symbols" value="1677075"/>
+<mapEntry key="*loading memory from target" value="6878130"/>
+<mapEntry key="*loading values from target" value="39222312"/>
+<mapEntry key="*trace" value="103829981"/>
+<mapEntry key="*updating expressions" value="3055639"/>
+<mapEntry key="*updating registers" value="8689462"/>
+<mapEntry key="*updating variables" value="6676038"/>
+<mapEntry key="Add Watchpoint" value="1161293"/>
+<mapEntry key="AddEventObserver" value="10981950"/>
+<mapEntry key="Evaluate" value="1175321"/>
+<mapEntry key="Retrieving globals list" value="17783623"/>
+<mapEntry key="SourceToAddress" value="1573926"/>
+<mapEntry key="areCachesAvailable" value="707911"/>
+<mapEntry key="break" value="16522257"/>
+<mapEntry key="checking tracepoints" value="369306"/>
+<mapEntry key="compute execution mode" value="343883"/>
+<mapEntry key="console" value="17147998"/>
+<mapEntry key="continue" value="18421923"/>
+<mapEntry key="core" value="5365701"/>
+<mapEntry key="disable" value="1268819"/>
+<mapEntry key="disassemble" value="40874066"/>
+<mapEntry key="enable" value="3082985"/>
+<mapEntry key="evaluate address" value="1580308"/>
+<mapEntry key="finish" value="23700213"/>
+<mapEntry key="get byte order" value="244503"/>
+<mapEntry key="get capabilities" value="439249"/>
+<mapEntry key="get cwd" value="292467"/>
+<mapEntry key="get execution addresss" value="175997"/>
+<mapEntry key="get source lines" value="193695"/>
+<mapEntry key="getValidEncodings" value="640057"/>
+<mapEntry key="initialize command help" value="32083572"/>
+<mapEntry key="interrupt" value="222765836"/>
+<mapEntry key="list breakpoint options" value="108827"/>
+<mapEntry key="list breakpoints" value="616668"/>
+<mapEntry key="list instruction sets" value="1519001"/>
+<mapEntry key="list signals" value="6332967"/>
+<mapEntry key="list source files" value="1280366"/>
+<mapEntry key="list watchpoint options" value="578114"/>
+<mapEntry key="list watchpoints" value="508556"/>
+<mapEntry key="loadfile" value="37826861"/>
+<mapEntry key="next" value="37379848"/>
+<mapEntry key="nexti" value="23521818"/>
+<mapEntry key="query supports threads" value="100866"/>
+<mapEntry key="reload-symbol-file" value="16129833"/>
+<mapEntry key="remove" value="1766469"/>
+<mapEntry key="run script" value="39963646"/>
+<mapEntry key="set $pc" value="23899546"/>
+<mapEntry key="set CWD" value="2767614"/>
+<mapEntry key="set breakpoint properties" value="6392486"/>
+<mapEntry key="set debug-from" value="2194867"/>
+<mapEntry key="set watchpoint properties" value="1852092"/>
+<mapEntry key="source dataload.py" value="268623554578"/>
+<mapEntry key="source demo.ds" value="4604813504"/>
+<mapEntry key="source image_import.py" value="3280763640"/>
+<mapEntry key="source progress_monitor.py" value="14122649281"/>
+<mapEntry key="start" value="28780827"/>
+<mapEntry key="step" value="33783035"/>
+<mapEntry key="stepi" value="24813352"/>
+<mapEntry key="synchronizing trace ranges" value="21785"/>
+<mapEntry key="toggleBreakpoint" value="9840086"/>
+<mapEntry key="updateBreakpointLocation" value="2136252"/>
+<mapEntry key="waitForTargetToStop" value="12105336"/>
+<mapEntry key="write memory" value="13039928"/>
+<mapEntry key="グローバルリストの取得" value="11625175"/>
+</mapAttribute>
+<intAttribute key="DEBUG_TAB..RESOURCES.COUNT" value="0"/>
+<booleanAttribute key="EVENT_VIEWER_ENABLED" value="false"/>
+<stringAttribute key="EVENT_VIEWER_MAX_DEPTH" value="1Mb"/>
+<stringAttribute key="EVENT_VIEWER_MAX_DEPTH_NUMBER" value="1048576"/>
+<booleanAttribute key="EVENT_VIEWER_STM_ENABLED" value="false"/>
+<stringAttribute key="EVENT_VIEWER_STM_MAX_DEPTH" value="1Mb"/>
+<stringAttribute key="EVENT_VIEWER_STM_MAX_DEPTH_NUMBER" value="1048576"/>
+<intAttribute key="FILES.CONNECT_TO_GDB_SERVER.RESOURCES.COUNT" value="0"/>
+<intAttribute key="FILES.DEBUG_EXISTING_ANDROID.RESOURCES.COUNT" value="0"/>
+<listAttribute key="FILES.DEBUG_RESIDENT_ANDROID"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.COUNT" value="1"/>
+<listAttribute key="FILES.DEBUG_RESIDENT_APP"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.VALUE" value=""/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.TYPE" value="APPLICATION_ON_TARGET"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.VALUE" value=""/>
+<intAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.COUNT" value="2"/>
+<listAttribute key="FILES.DOWNLOAD_AND_DEBUG"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.TYPE" value="TARGET_DOWNLOAD_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.VALUE" value=""/>
+<intAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.COUNT" value="3"/>
+<listAttribute key="FILES.DOWNLOAD_DEBUG"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.VALUE" value=""/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.TYPE" value="TARGET_DOWNLOAD_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.VALUE" value=""/>
+<intAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.COUNT" value="3"/>
+<intAttribute key="FILES.DOWNLOAD_DEBUG_ANDROID.RESOURCES.COUNT" value="0"/>
+<listAttribute key="FILES.ICE_DEBUG">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.ICE_DEBUG.RESOURCES.0.VALUE" value="${workspace_loc:/TrustZone_with_NEON/TrustZone_with_NEON.axf}"/>
+<intAttribute key="FILES.ICE_DEBUG.RESOURCES.COUNT" value="1"/>
+<listAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.ICE_DEBUG_WITH_ETB_TRACE.RESOURCES.COUNT" value="1"/>
+<listAttribute key="FILES.ICE_DEBUG_WITH_TRACE">
+<listEntry value="ON_DEMAND_LOAD"/>
+<listEntry value="ALSO_LOAD_SYMBOLS"/>
+</listAttribute>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="false"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.0.VALUE" value=""/>
+<intAttribute key="FILES.ICE_DEBUG_WITH_TRACE.RESOURCES.COUNT" value="1"/>
+<stringAttribute key="FILES.SELECTED_DEBUG_OPEATION" value="ICE_DEBUG"/>
+<stringAttribute key="HOST_WORKING_DIR" value="${workspace_loc}"/>
+<booleanAttribute key="HOST_WORKING_DIR_USE_DEFAULT" value="true"/>
+<listAttribute key="ITM_CHANNEL_LIST"/>
+<booleanAttribute key="KEY_COMMANDS_AFTER_CONNECT" value="true"/>
+<stringAttribute key="KEY_COMMANDS_AFTER_CONNECT_TEXT" value="add-symbol-file &quot;${workspace_loc:/TrustZone_with_NEON/normal.axf}&quot; N:0&#13;&#10;restore &quot;${workspace_loc:/TrustZone_with_NEON/scripts/ds5_params.bin}&quot; binary S:0x80300000"/>
+<intAttribute key="Messages.POST_TRIGGER_CAPTURE_SIZE.getLocalisedValue().FMTrace" value="50"/>
+<booleanAttribute key="Messages.STOP_ON_TRIGGER.getLocalisedValue().FMTrace" value="false"/>
+<intAttribute key="POST_TRIGGER_CAPTURE_SIZE" value="50"/>
+<booleanAttribute key="RSE_USE_HOSTNAME" value="true"/>
+<booleanAttribute key="STOP_ON_TRIGGER" value="false"/>
+<stringAttribute key="TCP_DISABLE_EXTENDED_MODE" value="true"/>
+<booleanAttribute key="TCP_KILL_ON_EXIT" value="false"/>
+<listAttribute key="TREE_NODE_PROPERTIES:debugger.view.ExpressionsView">
+<listEntry value="NODE CACHE VERSION 1"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:(float*)(biases + o * sizeof(float))"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="ﾌﾛｰﾄ"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:test"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="符号無し10進表示"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:ch_lefttop"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="ﾌﾛｰﾄ"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:filter_lefttop"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="ﾌﾛｰﾄ"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:output"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="ﾌﾛｰﾄ"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:weights"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="ﾌﾛｰﾄ"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:(SECURE_BUFFER + 0x51000)"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="文字"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:(SECURE_BUFFER + 0x50000)"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="文字"/>
+<listEntry value="EXPRESSION_GROUP:式:VALUE:kernel_topleft"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="ﾌﾛｰﾄ"/>
+</listAttribute>
+<listAttribute key="TREE_NODE_PROPERTIES:debugger.view.VariableTreeView">
+<listEntry value="NODE CACHE VERSION 1"/>
+<listEntry value="GLOBALS:Globals:VALUE:C:/Users/stheobal/OneDrive - ARM/Documents/Dan/TrustZone/main_secure.c::a"/>
+<listEntry value="1"/>
+<listEntry value="element formatter"/>
+<listEntry value="Float"/>
+</listAttribute>
+<booleanAttribute key="VFS_ENABLED" value="true"/>
+<stringAttribute key="VFS_LOCAL_DIR" value="${workspace_loc}"/>
+<stringAttribute key="VFS_REMOTE_MOUNT" value="/writeable"/>
+<stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x80000274&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop/TrustZone_with_NEON/main_secure.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\main_secure.c&quot; line=&quot;106&quot; function=&quot;main&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x80000254&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop/TrustZone_with_NEON/main_secure.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\main_secure.c&quot; line=&quot;107&quot; function=&quot;main&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
+<listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.addresses">
+<listEntry value="&lt;次の命令&gt;"/>
+<listEntry value=""/>
+<listEntry value="&lt;Next Instruction&gt;"/>
+</listAttribute>
+<listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.ranges">
+<listEntry value="100"/>
+<listEntry value=""/>
+<listEntry value="100"/>
+</listAttribute>
+<listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.MemoryView.addresses">
+<listEntry value=""/>
+<listEntry value="0x80361300"/>
+<listEntry value="0x80361000"/>
+<listEntry value="0x80360000"/>
+<listEntry value="0x8035E000"/>
+<listEntry value="0x8035B000"/>
+<listEntry value="0x80351000"/>
+<listEntry value="0x80350000"/>
+<listEntry value="0x80361300"/>
+<listEntry value="0x80300700"/>
+<listEntry value="0x80300680"/>
+<listEntry value="0x8035B000"/>
+<listEntry value="0x80300700"/>
+<listEntry value="0x80300680"/>
+<listEntry value="0x80300680"/>
+<listEntry value="0x8035CD00"/>
+<listEntry value="0x8035CD44"/>
+<listEntry value="0x8035B750"/>
+<listEntry value="0x8035B000 + 0x750"/>
+<listEntry value="0x8035B000"/>
+</listAttribute>
+<listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.MemoryView.ranges">
+<listEntry value=""/>
+<listEntry value="0x28"/>
+<listEntry value="0x200"/>
+<listEntry value="0x800"/>
+<listEntry value="0x2000"/>
+<listEntry value="0x2400"/>
+<listEntry value="0x9000"/>
+<listEntry value="0xC40"/>
+<listEntry value="1024"/>
+<listEntry value="0x8030cf00 - 0x80300700"/>
+<listEntry value="0x80300700 - 0x80300680"/>
+<listEntry value="1024"/>
+<listEntry value="1024"/>
+<listEntry value="32*4"/>
+<listEntry value="1024"/>
+<listEntry value="1024"/>
+<listEntry value="1024"/>
+<listEntry value="1024"/>
+<listEntry value="1024"/>
+<listEntry value="0x900"/>
+</listAttribute>
+<stringAttribute key="com.arm.debug.views.debugConsole.DebugCommandLine.History" value="b main"/>
+<listAttribute key="com.arm.debugger.views.common.AddressTracker.debugger.view.DisassemblyView.addresses">
+<listEntry value="&lt;Next Instruction&gt;"/>
+</listAttribute>
+<listAttribute key="com.arm.debugger.views.common.AddressTracker.debugger.view.DisassemblyView.ranges">
+<listEntry value="100"/>
+</listAttribute>
+<stringAttribute key="config_db_activity_name" value="Debug Cortex-A9"/>
+<stringAttribute key="config_db_connection_keys" value="dtsl_config dtsl_tracecapture_option dtsl_config_script model_params config_file setup TCP_KILL_ON_EXIT TCP_DISABLE_EXTENDED_MODE"/>
+<stringAttribute key="config_db_connection_type" value="Bare Metal Debug"/>
+<stringAttribute key="config_db_platform_name" value="ARM FVP (Installed with DS-5) - VE_Cortex_A9x1"/>
+<stringAttribute key="config_db_project_type" value="Bare Metal Debug"/>
+<stringAttribute key="config_db_project_type_id" value="BARE_METAL"/>
+<stringAttribute key="config_db_taxonomy_id" value="/platform/armfvp_installedwithds_5_/ve_cortex_a9x1"/>
+<stringAttribute key="config_file" value="CDB://cadi_config.xml"/>
+<booleanAttribute key="connectOnly" value="false"/>
+<listAttribute key="debugger.view.DisassemblyView:current">
+<listEntry value="&lt;次の命令&gt;"/>
+<listEntry value="100"/>
+</listAttribute>
+<listAttribute key="debugger.view.ExpressionsView">
+<listEntry value="current_input"/>
+<listEntry value="current_weight"/>
+<listEntry value="in_ch"/>
+<listEntry value="stride_row"/>
+<listEntry value="stride_col"/>
+<listEntry value="out_ch"/>
+<listEntry value="filter_row"/>
+<listEntry value="filter_col"/>
+<listEntry value="current_result"/>
+<listEntry value="kernel_result"/>
+<listEntry value="current_biase"/>
+</listAttribute>
+<mapAttribute key="debugger.view.ExpressionsView.ExpressionsData">
+<mapEntry key="0" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,ﾌﾛｰﾄ"/>
+<mapEntry key="1" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,ﾌﾛｰﾄ"/>
+<mapEntry key="10" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,ﾌﾛｰﾄ"/>
+<mapEntry key="2" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,符号無し10進表示"/>
+<mapEntry key="3" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,符号無し10進表示"/>
+<mapEntry key="4" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,符号無し10進表示"/>
+<mapEntry key="5" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,符号無し10進表示"/>
+<mapEntry key="6" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,符号無し10進表示"/>
+<mapEntry key="7" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,符号無し10進表示"/>
+<mapEntry key="8" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,ﾌﾛｰﾄ"/>
+<mapEntry key="9" value="NODE_TRANSFER_ELEMENT_COUNT,0;NODE_TRANSFER_ELEMENT_SIZE_IN_BYTES,4;NODE_TYPE,VALUE;FORMATTER,ﾌﾛｰﾄ"/>
+</mapAttribute>
+<stringAttribute key="debugger.view.ExpressionsView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;false&#9;452&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;76&#9;-1&#9;true&#9;2&#9;true&#9;false&#9;183&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;36&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;74&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;58&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;56&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;76&#9;-1&#9;true"/>
+<stringAttribute key="debugger.view.MemoryView" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;page&gt;&#10;&#9;&lt;memoryView displayWidthTag=&quot;BYTE_4&quot; formatTag=&quot;ﾌﾛｰﾄ&quot; autoAlign=&quot;false&quot;/&gt;&#10;&lt;/page&gt;&#10;"/>
+<listAttribute key="debugger.view.MemoryView:current">
+<listEntry value=""/>
+<listEntry value=""/>
+</listAttribute>
+<listAttribute key="debugger.view.MemoryView:current:4107940821804793602.viewid=2">
+<listEntry value=""/>
+<listEntry value=""/>
+</listAttribute>
+<stringAttribute key="debugger.view.NewRegisterView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;56&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;109&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;36&#9;-1&#9;true&#9;3&#9;false&#9;true&#9;47&#9;-1&#9;true&#9;4&#9;false&#9;true&#9;74&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;58&#9;-1&#9;true&#9;6&#9;false&#9;true&#9;74&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;76&#9;-1&#9;true"/>
+<stringAttribute key="debugger.view.NewRegisterView:_selectedRegisterSet" value="すべてのレジスター"/>
+<mapAttribute key="debugger.view.NewRegisterView_registerSets"/>
+<stringAttribute key="debugger.view.TraceView:BUCKET_SIZE" value="PER_10000"/>
+<stringAttribute key="debugger.view.TraceView:INDEX_PRESENTATION_TYPE" value="START"/>
+<listAttribute key="debugger.view.TraceView:TRACE_EXPORT_FILTERS"/>
+<stringAttribute key="debugger.view.TraceView:UpdateWhenHidden" value="true"/>
+<stringAttribute key="debugger.view.VariableTreeView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;225&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;109&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;91&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;36&#9;-1&#9;true&#9;4&#9;true&#9;true&#9;74&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;58&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;56&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;76&#9;-1&#9;true"/>
+<listAttribute key="debugger.view.VariableTreeView:USER_ADDED_FILE_STATICS"/>
+<listAttribute key="debugger.view.VariableTreeView:USER_ADDED_GLOBALS">
+<listEntry value="&quot;bp147_tzpc.c&quot;::tzpc"/>
+<listEntry value="&quot;main_secure.c&quot;::a"/>
+<listEntry value="&quot;main_secure.c&quot;::b"/>
+<listEntry value="&quot;main_secure.c&quot;::c"/>
+<listEntry value="&quot;main_secure.c&quot;::d"/>
+<listEntry value="&quot;main_secure.c&quot;::e"/>
+<listEntry value="&quot;main_secure.c&quot;::f"/>
+<listEntry value="&quot;main_secure.c&quot;::g"/>
+<listEntry value="&quot;main_secure.c&quot;::h"/>
+<listEntry value="&quot;main_secure.c&quot;::i"/>
+</listAttribute>
+<booleanAttribute key="debugger.view.register.DrawAsHex" value="false"/>
+<stringAttribute key="debugger.view.symbols.FunctionsView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;60&#9;1&#9;true&#9;1&#9;false&#9;true&#9;166&#9;-1&#9;true&#9;2&#9;false&#9;true&#9;127&#9;-1&#9;true&#9;3&#9;true&#9;true&#9;119&#9;0&#9;true&#9;4&#9;true&#9;true&#9;119&#9;-1&#9;true&#9;5&#9;false&#9;true&#9;62&#9;-1&#9;true&#9;6&#9;true&#9;true&#9;136&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;71&#9;-1&#9;true"/>
+<booleanAttribute key="debugger.view.variable.DrawAsHex" value="false"/>
+<booleanAttribute key="debugger.view.レジスタ.DrawAsHex" value="false"/>
+<booleanAttribute key="debugger.view.式.DrawAsHex" value="false"/>
+<stringAttribute key="ds5_launch_configuration_version" value="5.11"/>
+<stringAttribute key="dtsl_config" value="DtslScript"/>
+<stringAttribute key="dtsl_config_script" value="CDB://dtsl_config_script.py"/>
+<stringAttribute key="dtsl_options_file" value="trace_enabled_dtslprops"/>
+<stringAttribute key="dtsl_tracecapture_option" value="options.traceBuffer.traceCaptureDevice"/>
+<stringAttribute key="gdb_address" value=""/>
+<stringAttribute key="gdb_port" value="5000"/>
+<booleanAttribute key="linuxOS" value="false"/>
+<stringAttribute key="model_params" value=""/>
+<booleanAttribute key="runAfterConnect" value="false"/>
+<stringAttribute key="runScriptAfterConnect" value="${workspace_loc:/TrustZone_with_NEON/scripts/image_import.py}"/>
+<listAttribute key="scripts_view_expanded_nodes">
+<listEntry value="#DS"/>
+</listAttribute>
+<listAttribute key="scripts_view_recent_items">
+<listEntry value="#DSC:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\demo.ds"/>
+<listEntry value="#JythonC:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\image_import.py"/>
+<listEntry value="#JythonC:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\dataload.py"/>
+<listEntry value="#JythonC:\Users\ryutan01\Documents\DS-5 Workshop\jython_progress\progress_monitor.py"/>
+</listAttribute>
+<mapAttribute key="scripts_view_script_links">
+<mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\dataload.py" value=""/>
+<mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\demo.ds" value=""/>
+<mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\image_import.py" value=""/>
+<mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\jython_progress\progress_monitor.py" value=""/>
+</mapAttribute>
+<listAttribute key="setup">
+<listEntry value="CDB://../../../Scripts/rtsm_launcher.py"/>
+<listEntry value="DS5://bin/FVP_VE_Cortex-A9x1"/>
+</listAttribute>
+<stringAttribute key="stopAtExpression" value="*$ENTRYPOINT"/>
+<stringAttribute key="watchpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;watchpoints&gt;&#10;&lt;/watchpoints&gt;&#10;"/>
+</launchConfiguration>

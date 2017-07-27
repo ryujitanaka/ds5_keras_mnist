@@ -1,0 +1,227 @@
+<html xmlns:fn="http://www.w3.org/2005/xpath-functions">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TrustZone Example for Cortex-A9 and ARM Compiler 5</title>
+<style type="text/css">
+    body { font-size: 62.5%;    /* default 1.0em = 16px, so 62.5% of 16 = 10. Therefore, 1.0em now = 10px, 1.2em now = 12px etc. */
+        font-family: Verdana, Arial, "Lucida Grande", sans-serif; margin: 10px; padding: 0; background: #fff; min-width: 999px; }
+    /* Content Styling */
+    .para { font-size: 1.2em; margin-bottom: 0px; margin-top: 10px; }
+    p { font-size: 1.2em; margin-bottom: 0px; margin-top: 10px; }
+    h1 { font-size: 1.6em; color: #025066; margin-top: 0px; margin-bottom: 0px; }
+    h2 { font-size: 1.4em; font-weight: bold; color: #025066; margin-bottom: 0px; }
+    h3 { font-size: 1.2em; font-weight: bold; color: #025066; margin-bottom: 0px; }
+    a { color: #127490; }
+    a:hover { color: #014153; }
+    div.indent { margin-left:10px; margin-right: 10px; margin-bottom: 0px; margin-top: 10px; }
+    div.note { font-size: 1.0em; margin-left:10px; margin-right: 10px; margin-bottom: 0px; margin-top: 10px; }
+    .table { margin-top: 5px; margin-bottom: 5px; padding:0px; }
+    ul li { font-size: 1.0em; list-style-image: url(images/bullet_blue.png); }
+    div.toc ul li { font-size: 1.0em; list-style-image: url(images/bullet_blue.png); }
+    .table-cell { font-size: 75%; }
+    .image { margin-top: 5px; margin-bottom: 5px; padding:0px; }
+    .note { margin-bottom: 15px; background: #E0E0E0 }
+    .toc { font-size: 115%; margin-left: 20px; margin-top: 10px; margin-bottom: 15px; }
+    .italic { font-style: italic; }
+    .bold { font-weight: bold; }
+    .emphasis { font-weight: bold; font-style: italic; }
+    .underline { text-decoration: underline; }
+    .bold-underline { text-decoration: underline; font-weight: bold; }
+    .arg { font-family: 'Lucida Sans Typewriter', 'Courier New', Courier, monospace; color:#333399; }
+    .repl { font-style: italic; }
+    .code { font-size: 1.2em; margin-top: 2px; margin-left: 20px; margin-bottom: 2px; color: #333399;
+       font-family: 'Lucida Sans Typewriter', 'Courier New', Courier, monospace; }
+    .menu { font-weight: bold; }
+    .interface { font-weight: bold; }
+    ul {margin-top: 2px; margin-bottom: 5px; }
+    ol {list-style-type:decimal; margin-top: 2px; margin-bottom: 5px; }
+    ol ol {list-style-type:lower-alpha; margin-top: 2px; margin-bottom: 5px; }
+    ol ol ol {list-style-type:lower-roman; margin-top: 2px; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    
+    <a name="TrustZone%20Example%20for%20Cortex-A9%20and%20ARM%20Compiler%205"></a><h1>TrustZone Example for Cortex-A9 and ARM Compiler 5 - ARM®DS-5™</h1>
+    
+        <div class="para">This example demonstrates the support for TrustZone in DS-5 Debugger, targeted at Versatile Express Cortex-A9x4 and Cortex-A9x1 FVP model.</div>
+    
+
+    <div class="indent">
+        <a name="Purpose%20and%20scope"></a><h2>Purpose and scope</h2>
+        <div class="para">This example demonstrates the support for TrustZone in DS-5 Debugger.  It uses two images combined into a single executable - one image runs in the Secure world, and the other image runs in the Normal (or Non-Secure) world, linked via a Secure Monitor.  These make use of the TrustZone Security Extensions in Cortex-A9MPCore on a Versatile Express board and on a Cortex-A9x1-FVP model.  This is a simple example to show basic features - it is not intended as a reference for developing a trusted execution environment, in particular: the Secure Monitor only provides a partial context switch (only the SVC mode registers are saved/restored), and the TrustZone Protection Controller (TZPC) is configured to allow non-secure access to all memory and peripherals.</div>
+
+        <h3>Hardware and software requirements</h3>
+        <ul>
+           <li><div class="para">Versatile Express Cortex-A9x4 and a suitable power supply for it or the Cortex-A9x1 FVP model.</div></li>
+           <li><div class="para">If using Versatile Express Cortex-A9x4 a DSTREAM debug hardware and a suitable power supply for it, and a JTAG cable to connect it to the target</div></li>
+        </ul>
+
+        <div class="para">This example is intended to be built with ARM Compiler 5. If you wish to modify and rebuild the example, you must use ARM Compiler 5 to rebuild it.</div>
+        <div class="para">The executable builds with a base address 0x80000000, and is intended for running on Versatile Express Cortex-A9x4 or Cortex-A9x1 FVP model.</div>
+        <div class="para">Ready-made debug launch configurations <span class="arg">TrustZone_with_NEON-A9x1.launch</span> and <span class="arg">TrustZone-Cortex-A9x1-FVP.launch</span> are provided.</div>
+    </div>
+
+    <div class="indent">
+        <a name="Building%20the%20example"></a><h2>Building the example</h2>
+        <div class="para">This example can be built with ARM Compiler 5 using the supplied Eclipse project, or directly on the command-line with the supplied <span class="arg">Makefile</span>.</div>
+        <div class="para">The Eclipse project is a makefile builder project, rather than a managed builder project, because two link steps are needed to build the project.</div>
+        <div class="para">This executable has an application base address 0x80000000, and is intended for running on Versatile Express Cortex-A9x4 or Cortex-A9x1 FVP model.</div>
+        
+        <div class="para">This example depends on semihosting support being provided by the debug system.
+DS-5 Debugger enables semihosting automatically if either symbols <span class="arg">__auto_semihosting</span> or <span class="arg">__semihosting_library_function</span> are present in an image.  ARM Compiler 5 and ARM Compiler 6 both add <span class="arg">__semihosting_library_function</span> automatically to an image at link time if that image uses any semihosting-using functions.  If compiling with gcc or an earlier release of armcc, use an alias symbol definition such as <span class="arg">void __auto_semihosting(void) __attribute__ ((alias("main")));</span> or turn on semihosting support in the debugger explicitly with <span class="arg">set semihosting enabled on</span>.</div>
+
+    </div>
+
+    <div class="indent">
+        <a name="Building%20on%20the%20command-line"></a><h2>Building on the command-line</h2>
+        <div class="para">To build the example on the command-line with the supplied <span class="arg">make</span> utility:</div>
+        <ul>
+           <li><div class="para">On Windows, open a <span class="interface">DS-5 Command Prompt</span> from the Start menu, run the <span class="arg">select_toolchain</span> utility, and select <span class="arg">ARM Compiler 5 (DS-5 built-in)</span> from the list</div></li>
+           <li><div class="para">On Linux, run the <span class="arg">suite_exec</span> utility with the <span class="arg">--toolchain</span> option to select the compiler and start a shell configured for the suite environment, for example: <span class="arg">~/DS-5/bin/suite_exec --toolchain "ARM Compiler 5 (DS-5 built-in)" bash</span>
+</div></li>
+        </ul>
+        <div class="para">Then navigate to the <span class="arg">...\TrustZone</span> directory, and type:</div>
+        <div class="para"><span class="arg">make</span></div>
+        <div class="para">The usual <span class="arg">make</span> rules: <span class="arg">clean</span>, <span class="arg">all</span> and <span class="arg">rebuild</span> are provided in the <span class="arg">makefile</span>.</div>
+    </div>
+
+    
+    <div class="indent">
+        <a name="Building%20from%20Eclipse"></a><h2>Building from Eclipse</h2>
+        <div class="para">To build the supplied Eclipse projects:</div>
+        
+    <ol>
+        <li><div class="para">In the Project Explorer view, select the project you want to build.</div></li>
+        <li><div class="para">Select <span class="menu">Project<span class="para"> → </span>Build Project</span>.</div></li>
+    </ol>
+
+    </div>
+
+
+    <div class="indent">
+        <a name="Running%20the%20example"></a><a name="running"></a><h2>Running the example</h2>
+        <ol>
+            <li><div class="para">If using Versatile Express Cortex-A9x4, power-up the board and let its Loader initialize.  To prevent Linux from booting, ensure both switches SW0 and SW1 are up/off.</div></li>
+            <li><div class="para">Select <span class="menu">Run<span class="para"> → </span>Debug Configurations...</span>.</div></li>
+            <li><div class="para">Select the <span class="arg">TrustZone_with_NEON-A9x1</span> or <span class="arg">TrustZone-Cortex-A9x1-FVP</span> from the list of DS-5 Debugger configurations.</div></li>
+            <li><div class="para">If using <span class="arg">TrustZone_with_NEON-A9x1</span>, in the Connections panel, enter the USB: or TCP: IP address or name of your DSTREAM unit in the Debug Hardware Address field, or click on <span class="interface">Browse</span> to select one from a list, otherwise an error will be reported: <span class="arg">
+        <span class="arg">Launch configuration has errors: Configuration for connection type 'Bare Metal Debug' is not valid - Connection cannot be empty</span>
+</span>.</div></li>
+            <li><div class="para">If using <span class="arg">TrustZone-Cortex-A9x1-FVP</span>, make sure that the <span class="interface">Model Parameters</span> field is empty.</div></li>
+            <li><div class="para">Click on <span class="interface">Debug</span> to start debugging. Debugging requires the DS-5 Debug perspective. If the <span class="interface">Confirm Perspective Switch</span> dialog box opens, click on <span class="interface">Yes</span> to switch perspective.</div></li>
+            <li><div class="para">The example image will be downloaded to the target and will run to <span class="arg">secureStart</span>.</div></li>
+            <li><div class="para">Run the executable (press F8). Text output appears in the <span class="interface">App Console</span> view (if the example is running on real hardware) or in the <span class="interface">Target Console</span> view (if the example is running on a model), similar to this:</div></li>
+        </ol>
+<pre class="code">
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+Hello from Normal world
+Hello from Secure world
+</pre>
+    <div class="para">To run the example again, disconnect DS-5 Debugger from the target, if using Versatile Express Cortex-A9x4 power-cycle the target, then reconnect DS-5 Debugger and reload the executable in the same way as before.</div>
+    </div>
+
+    <div class="indent">
+        <a name="Program%20execution%20flow"></a><h2>Program execution flow</h2>
+        <div class="para">The flow of program execution is shown below:</div>
+<pre class="code">
+  secureStart     startup_secure.s: Initialization of Secure world
+       |
+    __main        ARM library initialization
+       |
+     main         main_secure.c: Enable caches and configure TZPC
+       |
+  monitorInit     monitor.s: initialize Monitor
+       |
+     main         main_secure.c: Print message and execute SMC
+       |
+     S -&gt; NS
+       |
+  normalStart     startup_normal.s: Initialization of Normal world
+       |
+    __main        ARM library initialization
+       |
+     main         main_normal.c: Enable caches, print message and execute SMC
+       |
+    NS -&gt; S
+       |
+  SMC_Handler     monitor.s: Perform context switch from NS to S
+       |
+     main         main_secure.c: Print message and execute SMC
+       |
+  SMC_Handler     monitor.s: Perform context switch from S to NS
+       |
+     S -&gt; NS
+       |
+     main         main_normal.c: Print message and execute SMC
+       |
+    NS -&gt; S
+       |
+  SMC_Handler     monitor.s: Perform context switch from NS to S
+       |
+     main         main_secure.c: Print message and execute SMC
+</pre>
+
+    </div>
+
+
+    <div class="indent">
+        <a name="Exploring%20the%20example"></a><h2>Exploring the example</h2>
+        <div class="para">Disconnect any existing debug session, then power-cycle the target if using Versatile Express Cortex-A9x4, then reconnect and reload the executable in the same way as before, selecting "Debug from entry point" in the Debugger tab.  The executable <span class="arg">TrustZone_with_NEON.axf</span> loaded contains the Secure world image and its debug symbols, and the Normal world image (but not its debug symbols).  Notice that the debug launcher not only loads the executable <span class="arg">TrustZone_with_NEON.axf</span> but also separately loads debug symbols for the Normal world image with <span class="arg">add-symbol-file normal.axf N:0</span>.</div>
+        <ol>
+            <li><div class="para">Program execution starts from <span class="arg">secureStart</span> in <span class="arg">startup_secure.s</span>.  This routine initializes the Secure world, including setting up the SVC stack, invalidating the caches and TLBs, setting up the page tables, enabling the MMU, then branching to the C library run-time initialization in <span class="arg">__main</span>.</div></li>
+            <li><div class="para">In the <span class="interface">Registers</span> view, expand <span class="interface">Core</span> to see the core registers, and expand <span class="interface">CP15</span> to see the CP15 registers.</div></li>
+            <li><div class="para">Check the processor is in SVC mode in Secure state by looking at the M bit in the CPSR and NS bit in the Secure Configuration Register (SCR) in the <span class="interface">Registers</span> view, or type <span class="arg">output $CPSR.M</span> and <span class="arg">output $CP15::$System::$SCR.NS</span> in the CLI.</div></li>
+            <li><div class="para">Set a breakpoint on Secure world's main() with <span class="arg">b main_secure.c::main</span> and run to it (press F8).  The source file qualifier is needed in this breakpoint command because there are two main() functions in the image - a Secure world main and a Normal world main.  Secure world's main() will then enable the caches and configure the TZPC before calling <span class="arg">monitorInit</span> in <span class="arg">monitor.s</span> to initialize the Monitor and call NS world.</div></li>
+            <li><div class="para">Set a breakpoint in the Monitor initialization code in <span class="arg">monitor.s</span> with <span class="arg">b monitorInit</span> and run to it (press F8).  The Monitor initialization will install the Monitor's vector table, initialize the Monitor mode stack pointer, create and save a dummy Normal world state (this will be used for the first entry to the Normal world) before returning to the Secure world caller.</div></li>
+            <li><div class="para">Single-step (press F5) to <span class="arg">CPS     #Mode_MON</span> then single-step this instruction.  Notice the mode change from SVC to MON reflected in the CPSR, then back again to SVC a couple of instructions later.  Single-step through to the final <span class="arg">BX lr</span> in <span class="arg">monitor.s</span>, then single-step again to return to the Secure world in <span class="arg">main_secure.c</span>.</div></li>
+            <li><div class="para">Secure world's main will print the first "Hello from Secure world", then execute an SMC instruction via <span class="arg">yield()</span> to switch back to the Monitor.</div></li>
+            <li><div class="para">Set a breakpoint on <span class="arg">yield()</span>, run to it, then single-step the SMC instruction.  This triggers an SMC exception, landing at the SMC entry in the Monitor's vector table.  Notice the mode change from SVC to MON reflected in the CPSR.</div></li>
+            <li><div class="para">Single-step through to the end of <span class="arg">SMC_Handler</span>.  Notice the NS bit being toggled before stepping the exception return instruction <span class="arg">MOVS    pc, lr</span> that jumps to Normal world's <span class="arg">normalStart</span> routine.</div></li>
+            <li><div class="para">
+<span class="arg">normalStart</span> initializes the Normal world, including identifying the current CPU and sleeping all except CPU 0, setting up stacks, invalidating the caches and TLBs, setting up the page tables, enabling the MMU, setting the Vector Base Address Register (needed here because NS VBAR has no defined reset value), then branching to the C library run-time initialization in <span class="arg">__main</span>.</div></li>
+            <li><div class="para">Set a breakpoint on Normal world's main() with <span class="arg">b main_normal.c::main</span> and run to it (press F8).  Normal world's main will enable the caches, print the first "Hello from Normal world", then execute an SMC instruction via <span class="arg">yield()</span> to switch into the Monitor.</div></li>
+            <li><div class="para">Set a breakpoint on <span class="arg">yield()</span>, run to it, then single-step the SMC instruction.  This again triggers an SMC exception, landing at the SMC entry in the Monitor's vector table.  Notice the mode change from SVC to MON reflected in the CPSR.</div></li>
+            <li><div class="para">Step or run to the exception return instruction <span class="arg">MOVS    pc, lr</span> and step it.  Notice the mode change from MON to SVC reflected in the CPSR, and a jump to Secure world's <span class="arg">main()</span>.</div></li>
+            <li><div class="para">Secure world's main will print the second "Hello from Secure world", then execute an SMC instruction via <span class="arg">yield()</span> to switch back to the Monitor again.</div></li>
+            <li><div class="para">Continue running (press F8) a few more times to repeat the switching between Normal and Secure world via the Monitor.</div></li>
+            <li><div class="para">In the <span class="interface">Breakpoints</span> view, delete all the breakpoints, then from <span class="interface">View Menu</span>, select <span class="interface">Manage Signals</span>, then tick Stop and Print for the SMC exception.</div></li>
+            <li><div class="para">Continue running (press F8) a few more times to see the SMC exception being trapped by the debugger.</div></li>
+            <li><div class="para">In a real system, the TrustZone Protection Controller (TZPC) can be is configured to allow/forbid secure/non-secure access to memory and peripherals.  In this simple example, the TZPC is configured to allow non-secure access to all memory and peripherals.  However, the TZPC itself is only accessible in secure world.  To demonstrate this, open <span class="interface">Memory</span> view at address <span class="arg">S:0x100E6800</span> (the <span class="arg">S:</span> meaning Secure access).  The TZPC is based at 0x100E6000 but its status/control registers start at offset 0x800.  Notice the registers contain 0xFF, as programmed earlier in <span class="arg">main_secure.c()</span> with calls to <span class="arg">setDecodeRegionNS()</span>.  Then open a <span class="interface">Memory</span> view at address <span class="arg">N:0x100E6800</span> (the <span class="arg">N:</span> meaning Non-Secure access).  This address region will abort because the TZPC is not accessible from Non-Secure state.</div></li>
+            <li><div class="para">Continue running (press F8) until the application exits normally, then disconnect.</div></li>
+            <li><div class="para">To run the example again, you must first power-cycle the target, then reconnect and reload the executable in the same way as before.</div></li>
+        </ol>
+    </div>
+
+    <h2>See also:</h2>
+<div class="indent"><ul>
+        <li><div class="para"><a href="https://developer.arm.com/docs/100953/latest/configuring-debug-connections-in-ds-5-debugger"><i>Configuring debug connections in DS-5 Debugger</i> in <i>DS-5 Debugger User Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/100953/latest/"><i>DS-5 Debugger User Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/100954/latest/"><i>DS-5 Debugger Command Reference</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/100966/latest/"><i>Fixed Virtual Platforms FVP Reference Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/100955/latest"><i>ARM DS-5 ARM DSTREAM User Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/dui0472/latest/"><i>ARM Compiler 5 armcc User Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/dui0473/latest/"><i>ARM Compiler 5 armasm User Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/dui0474/latest/"><i>ARM Compiler 5 armlink User Guide</i></a></div></li>
+        <li><div class="para"><a href="https://developer.arm.com/docs/dui0471/latest/"><i>ARM Compiler 5 Software Development Guide</i></a></div></li>
+    </ul></div>
+<br><br><div align="left" class="legal">
+<hr>Copyright© 2010-2017 ARM Limited. All Rights Reserved.</div>
+</body>
+</html>
