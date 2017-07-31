@@ -94,7 +94,6 @@ int convolution(
 				for (filter_col = 0; filter_col < lay->filter_columns; filter_col++) {	// フィルター列方向ループ
 					for (in_ch = 0; in_ch < lay->input_channel; in_ch++) {	// 入力チャンネルループ
 						// 現在の入力値取得
-						// 入力チャンネルおよびストライド計算後の先頭アドレスは解決済み
 						current_input = ((float*)inputs)[  ((stride_row + filter_row) * lay->input_columns * lay->input_channel)	// [x][ ][ ]
 														 + ((stride_col + filter_col)                      * lay->input_channel)	// [ ][x][ ]
 														 + in_ch];																	// [ ][ ][x]
