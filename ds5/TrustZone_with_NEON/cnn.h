@@ -2,7 +2,7 @@
 ==================================================================
  Copyright ARM Ltd 2017. All rights reserved.
 
- Simple CNN Application for Prediction only
+ Simple CNN Application for Inference only
 ==================================================================
 */
 // スキャッタロードファイルでSECURE_BUFFERとして確保済みの領域(0x80300000　to 0x804FFFFF)
@@ -88,7 +88,7 @@
 #define KERASLAYER8_WEIGHTS 0x8034d128
 
 //--- 層データ格納先アドレス ---
-// ※各層向けにフラットに領域を確保しているがシーケンシャルな処理であるため重複しても構わない
+// ※各層向けに独立した領域を確保しているがシーケンシャルな処理であるため本来は使いまわしても構わない
 // 入力層
 // サイズ(Channel:1, Figure rows:28, Figure columns:28)
 #define INPUTLAYER 0x80350000	// 0x80350000 to 0x80350C40 (size 0xC40)

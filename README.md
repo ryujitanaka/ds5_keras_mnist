@@ -23,10 +23,11 @@ Keras MNIST CNN example (François Chollet)をベースにネットワークサ�
 
 ---
 ## ds5_keras_mnist/ds5/TrustZone_with_NEON
-`ds5_keras_mnist/jupyter/CQseminar_MNIST_CNN.ipynb`で出力した学習済みニューラルネットワークのパラメータファイルをCortex-A9ベアメタルターゲットに読み込みMNISTの推論を行います。
+`ds5_keras_mnist/jupyter/CQseminar_MNIST_CNN.ipynb`で出力した学習済みニューラルネットワークのパラメータファイルをARM Cortex-A9ベアメタルターゲットに読み込みMNISTの推論を行います。  
+学習済みニューラルネットワークと推論処理はTrustZoneのSecure worldに配置されるため、コストをかけて学習したニューラルネットワークを保護することができます。
 ### 環境
 * ホストPC : Windows 64bit
-* DS-5 Version 5.27.1:  
+* DS-5 Version 5.27.1  
 <https://developer.arm.com/products/software-development-tools/ds-5-development-studio/downloads>
 
 ### Exampleプロジェクト本体

@@ -83,7 +83,7 @@ static unsigned int test_data[784] = {
 int main(void)
 {
   unsigned int tmp;
-  unsigned int predict;
+  unsigned int inference;
 // MMU was enabled earlier and scatterloading has now finished, so
 // it is now safe to enable caches and branch prediction
   enableBranchPrediction();
@@ -101,8 +101,8 @@ int main(void)
   // Install monitor
   monitorInit();
 
-  mnist_cnn_eval(((unsigned int*)TESTDATA), &predict);
-  printf("Predicted: %d\n", predict);
+  mnist_cnn_eval(((unsigned int*)TESTDATA), &inference);
+  printf("Inference from Secure world: %d\n", inference);
 
   yield();
 

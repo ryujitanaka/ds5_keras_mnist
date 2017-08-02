@@ -2,7 +2,7 @@
 ==================================================================
  Copyright ARM Ltd 2017. All rights reserved.
 
- Simple CNN Application for Prediction only
+ Simple CNN Application for Inference only
 ==================================================================
 */
 #include "cnn.h"

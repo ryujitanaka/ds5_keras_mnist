@@ -8,26 +8,26 @@
 <stringAttribute key="ANDROID_PROCESS_NAME" value=""/>
 <booleanAttribute key="ANDROID_TRY_ROOT" value="true"/>
 <mapAttribute key="AverageDurationTracker">
-<mapEntry key="*Fetching Data Model" value="431417"/>
+<mapEntry key="*Fetching Data Model" value="9193532"/>
 <mapEntry key="*FunctionLoader" value="27627409"/>
-<mapEntry key="*list global low level symbols" value="1644870"/>
+<mapEntry key="*list global low level symbols" value="2430557"/>
 <mapEntry key="*loading memory from target" value="13131938"/>
-<mapEntry key="*loading values from target" value="18698495"/>
+<mapEntry key="*loading values from target" value="3404203"/>
 <mapEntry key="*trace" value="344184705"/>
 <mapEntry key="*updating expressions" value="3055639"/>
-<mapEntry key="*updating registers" value="8689462"/>
+<mapEntry key="*updating registers" value="30413798"/>
 <mapEntry key="*updating variables" value="700080"/>
 <mapEntry key="Add Watchpoint" value="1161293"/>
-<mapEntry key="AddEventObserver" value="7985908"/>
+<mapEntry key="AddEventObserver" value="13281257"/>
 <mapEntry key="Evaluate" value="1636763"/>
 <mapEntry key="Retrieving globals list" value="17783623"/>
 <mapEntry key="SourceToAddress" value="600489"/>
 <mapEntry key="areCachesAvailable" value="537252"/>
-<mapEntry key="break" value="7104996"/>
+<mapEntry key="break" value="23956439"/>
 <mapEntry key="checking tracepoints" value="556102"/>
-<mapEntry key="compute execution mode" value="243193"/>
+<mapEntry key="compute execution mode" value="459698"/>
 <mapEntry key="console" value="17147998"/>
-<mapEntry key="continue" value="15131221"/>
+<mapEntry key="continue" value="25634343"/>
 <mapEntry key="core" value="5365701"/>
 <mapEntry key="disable" value="1268819"/>
 <mapEntry key="disassemble" value="30051038"/>
@@ -35,43 +35,45 @@
 <mapEntry key="evaluate address" value="2195821"/>
 <mapEntry key="finish" value="23700213"/>
 <mapEntry key="get byte order" value="512365"/>
-<mapEntry key="get capabilities" value="143813"/>
+<mapEntry key="get capabilities" value="193307"/>
 <mapEntry key="get cwd" value="169572"/>
-<mapEntry key="get execution addresss" value="305568"/>
-<mapEntry key="get source lines" value="251406"/>
+<mapEntry key="get execution addresss" value="252209"/>
+<mapEntry key="get source lines" value="229064"/>
 <mapEntry key="getValidEncodings" value="775257"/>
-<mapEntry key="initialize command help" value="39780362"/>
+<mapEntry key="initialize command help" value="51499883"/>
 <mapEntry key="interrupt" value="58925284"/>
-<mapEntry key="list breakpoint options" value="117141"/>
-<mapEntry key="list breakpoints" value="488937"/>
-<mapEntry key="list instruction sets" value="474757"/>
-<mapEntry key="list signals" value="9854934"/>
+<mapEntry key="list breakpoint options" value="173063"/>
+<mapEntry key="list breakpoints" value="677464"/>
+<mapEntry key="list instruction sets" value="1060168"/>
+<mapEntry key="list signals" value="14331770"/>
 <mapEntry key="list source files" value="529634"/>
-<mapEntry key="list watchpoint options" value="518865"/>
-<mapEntry key="list watchpoints" value="255621"/>
-<mapEntry key="loadfile" value="46019572"/>
+<mapEntry key="list watchpoint options" value="2053741"/>
+<mapEntry key="list watchpoints" value="1300466"/>
+<mapEntry key="loadfile" value="119335272"/>
 <mapEntry key="next" value="30154136"/>
 <mapEntry key="nexti" value="23521818"/>
 <mapEntry key="query supports threads" value="100866"/>
 <mapEntry key="reload-symbol-file" value="16129833"/>
 <mapEntry key="remove" value="3607156"/>
-<mapEntry key="run script" value="52299786"/>
+<mapEntry key="run script" value="75117915"/>
 <mapEntry key="set $pc" value="5832535"/>
-<mapEntry key="set CWD" value="3012492"/>
-<mapEntry key="set breakpoint properties" value="9191252"/>
-<mapEntry key="set debug-from" value="646714"/>
+<mapEntry key="set CWD" value="6917287"/>
+<mapEntry key="set breakpoint properties" value="14162152"/>
+<mapEntry key="set debug-from" value="4934188"/>
 <mapEntry key="set watchpoint properties" value="1852092"/>
 <mapEntry key="source dataload.py" value="268623554578"/>
-<mapEntry key="source demo.ds" value="2549122001"/>
-<mapEntry key="source image_import.py" value="3243457393"/>
+<mapEntry key="source demo.ds" value="2929914247"/>
+<mapEntry key="source guitest.py" value="624811555"/>
+<mapEntry key="source image_import.py" value="4572400232"/>
 <mapEntry key="source progress_monitor.py" value="14122649281"/>
-<mapEntry key="start" value="33457590"/>
+<mapEntry key="start" value="99238343"/>
 <mapEntry key="step" value="24500725"/>
 <mapEntry key="stepi" value="24813352"/>
-<mapEntry key="synchronizing trace ranges" value="17897"/>
+<mapEntry key="synchronizing trace ranges" value="18313"/>
 <mapEntry key="toggleBreakpoint" value="10806373"/>
 <mapEntry key="updateBreakpointLocation" value="8959366"/>
-<mapEntry key="waitForTargetToStop" value="9894030"/>
+<mapEntry key="waitForTargetToStop" value="20715823"/>
+<mapEntry key="write expression" value="5198225"/>
 <mapEntry key="write memory" value="18148825"/>
 <mapEntry key="グローバルリストの取得" value="6795231"/>
 </mapAttribute>
@@ -323,7 +325,7 @@
 <listEntry value=""/>
 <listEntry value=""/>
 </listAttribute>
-<stringAttribute key="debugger.view.NewRegisterView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;56&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;109&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;36&#9;-1&#9;true&#9;3&#9;false&#9;true&#9;47&#9;-1&#9;true&#9;4&#9;false&#9;true&#9;74&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;58&#9;-1&#9;true&#9;6&#9;false&#9;true&#9;74&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;76&#9;-1&#9;true"/>
+<stringAttribute key="debugger.view.NewRegisterView:DebugOutlineColumnState" value="OutlineConfig1&#9;8&#9;0&#9;true&#9;true&#9;93&#9;-1&#9;true&#9;1&#9;false&#9;true&#9;109&#9;-1&#9;true&#9;2&#9;true&#9;true&#9;147&#9;-1&#9;true&#9;3&#9;false&#9;true&#9;47&#9;-1&#9;true&#9;4&#9;false&#9;true&#9;74&#9;-1&#9;true&#9;5&#9;true&#9;true&#9;58&#9;-1&#9;true&#9;6&#9;false&#9;true&#9;74&#9;-1&#9;true&#9;7&#9;true&#9;true&#9;76&#9;-1&#9;true"/>
 <stringAttribute key="debugger.view.NewRegisterView:_selectedRegisterSet" value="すべてのレジスター"/>
 <mapAttribute key="debugger.view.NewRegisterView_registerSets"/>
 <listAttribute key="debugger.view.TraceView:TRACE_EXPORT_FILTERS"/>
@@ -363,12 +365,14 @@
 <listEntry value="#DS"/>
 </listAttribute>
 <listAttribute key="scripts_view_recent_items">
+<listEntry value="#JythonC:\Users\ryutan01\Documents\DS-5 Workshop\startup_ARMv8x1_AC6_unit1\unittest\guitest.py"/>
 <listEntry value="#DSC:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\demo.ds"/>
 </listAttribute>
 <mapAttribute key="scripts_view_script_links">
 <mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\cnn_import.py" value=""/>
 <mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\demo.ds" value=""/>
 <mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\TrustZone_with_NEON\scripts\image_import.py" value=""/>
+<mapEntry key="C:\Users\ryutan01\Documents\DS-5 Workshop\startup_ARMv8x1_AC6_unit1\unittest\guitest.py" value=""/>
 </mapAttribute>
 <listAttribute key="setup">
 <listEntry value="CDB://../../../Scripts/rtsm_launcher.py"/>
