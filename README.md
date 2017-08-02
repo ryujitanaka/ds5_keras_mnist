@@ -1,7 +1,7 @@
 # ds5_keras_mnist
 Keras MNIST to ARM Cortex-A9 Baremetal porting using DS-5 - CQ ARM MCU Workshop 2017 
 ---
-このプロジェクトは2017/7/28に開催されたCQ出版社主催のARMマイコン・ワークショップ2017にてセッション A-05 組み込みでディープラーニングの発表で用いたサンプルプログラムです。  
+本プロジェクトは2017/7/28に開催されたCQ出版社主催のARMマイコン・ワークショップ2017にてセッション A-05 組み込みでディープラーニングの発表で用いたサンプルプログラムです。  
   
 ---
 ## ds5_keras_mnist/jupyter
@@ -10,7 +10,7 @@ Keras MNIST CNN example (François Chollet)をベースにネットワークサ�
 ### CQseminar_MNIST_CNN.ipynb
 ニューラルネットワークのトレーニングを行いパラメータ（重み、バイアス）のArrayをjsonでファイルに保存します。
 ### CQseminar_MNIST_CNN_2.ipynb
-ニューラルネットワークの各層の出力Arrayを表示しデータ構造を理解します。行列の演算では要素の並びが異なると計算結果が一致しません。
+ニューラルネットワークの各層の出力Arrayの構成を理解するためにArrayをprintで表示します。行列の演算では要素の並びが異なると計算結果が一致しません。
 ### 環境
 * ホストPC : Windows 64bit
 * Anaconda
@@ -19,8 +19,6 @@ Keras MNIST CNN example (François Chollet)をベースにネットワークサ�
 * Keras
 * matplotlib
 * pillow
-* pyqt5
-* pyqt=4
 * h5py
 
 ---
