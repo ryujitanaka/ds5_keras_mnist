@@ -47,6 +47,8 @@ Kerasから出力されたパラメータファイルはサイズが大きいた
 デバッガ接続時に下記コマンドで一括展開されます。  
 `restore "${workspace_loc:/TrustZone_with_NEON/scripts/ds5_params.bin}" binary S:0x80300000`
 ### 推論対象の入力画像
+推論対象となる手書き数字の画像を組み込みデバイスに入力するには一般的にタッチパネル付きLCDなどのペリフェラルが必要になります。本サンプルではニューラルネットワークの処理に集中するためDS-5のJythonデバッガスクリプトを利用したスタブを構築しています。  
+
 * JPEGファイル  
 `ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/test.jpg`
 * JPEGファイルをメモリに展開するスクリプト  
