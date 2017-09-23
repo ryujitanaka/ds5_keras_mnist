@@ -55,8 +55,7 @@ Kerasから出力されたパラメータファイルはサイズが大きいた
 * JPEGファイルをメモリに展開するスクリプト  
 デバッガ接続時に呼び出されます。  
 `ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/image_import.py`
-* JPEGファイルをメモリに展開し推論処理関数を呼び出すスクリプト
-`ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/demo.ds`  
+
 
 ---
 ## ご注意
