@@ -77,11 +77,11 @@ def main():
     lay8_params = loadParams(imgDir + '/scripts/mnist_cnn_train121_params_layer8.json')
 
     #--- store parameters ---
-    adr = 0x80300000
+    s_adr = 0x80300000
 
     print 'Keras_lay[0]'
     print 'biases{Array[16]}, weights{Array[5][5][1][16]}'
-    adr = storeParams(ec, adr, lay0_params, 16, 5, 5, 1, 16)
+    adr = storeParams(ec, s_adr, lay0_params, 16, 5, 5, 1, 16)
 
     print 'Keras_lay[2]'
     print 'biases{Array[32]}, weights{Array[5][5][16][32]}'
@@ -93,8 +93,11 @@ def main():
 
     print 'Keras_lay[8]'
     print 'biases{Array[10]}, weights{Array[128][10]}'
-    adr = storeParams(ec, adr, lay8_params, 10, 128, 10, 0, 0)
+    e_adr = storeParams(ec, adr, lay8_params, 10, 128, 10, 0, 0)
 
+    #--- save stored parameters to binary file ---
+    dscmd = 'dump binary memory "TrustZone_with_NEON/scripts/ds5_params.bin" S:0x%08x S:0x%08x' % (s_adr, e_adr)
+    ec.executeDSCommand(dscmd)
 
 if __name__ == '__main__':
     main() 

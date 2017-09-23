@@ -41,8 +41,9 @@ Kerasから出力されたパラメータファイルはサイズが大きいた
 `ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/mnist_cnn_train121_params_layer6.json`
 `ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/mnist_cnn_train121_params_layer8.json`
 * デバイスのメモリへ展開するスクリプト  
-`ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/cnn_import.py`
-* デバイスのメモリへ展開後にバイナリ保存したファイル  
+`ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/cnn_import.py`  
+パラメータをデバイスのメモリへ展開した後、ds5_params.binにバイナリファイルとして保存します。同名のファイルが既に存在する場合は保存に失敗しますので、あらかじめ削除しておいてください。  
+* デバイスのメモリへ展開されたパラメータを保存したバイナリファイル  
 `ds5_keras_mnist/ds5/TrustZone_with_NEON/scripts/ds5_params.bin`  
 デバッガ接続時に下記コマンドで一括展開されます。  
 `restore "${workspace_loc:/TrustZone_with_NEON/scripts/ds5_params.bin}" binary S:0x80300000`
