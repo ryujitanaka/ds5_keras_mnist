@@ -1,0 +1,4 @@
+This example program uses RTX Kernel to control 4 threads and
+to pass signals between the threads. The threads in this program do
+nothing more than increment counters and delay for a few clock ticks.
+
