@@ -96,7 +96,7 @@ def main():
     e_adr = storeParams(ec, adr, lay8_params, 10, 128, 10, 0, 0)
 
     #--- save stored parameters to binary file ---
-    dscmd = 'dump binary memory "RTX_Renesas_NEON_MNIST/scripts/ds5_params.bin" S:0x%08x S:0x%08x' % (s_adr, e_adr)
+    dscmd = 'dump binary memory "%s/scripts/ds5_params.bin" S:0x%08x S:0x%08x' % (imgDir, s_adr, e_adr)
     ec.executeDSCommand(dscmd)
 
 if __name__ == '__main__':

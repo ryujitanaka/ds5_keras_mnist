@@ -5,63 +5,64 @@
  Simple CNN Application for Inference only
 ==================================================================
 */
-// RW_DATAの後半に配置(0x20650000　to 0x206FFFFF)
-#define NN_BUFFER	0x20650000
+// Buffer for trained comvolutional neural network parameters
+// 0x20300000 to 0x20370C40 size 0x00070C40
+#define NN_BUFFER 0x20300000
 
 // keras_lay[0]
-// 入力(Channel:1, Figure rows:28, Figure columns:28)
-// 出力(Channel:16, Figure rows:24, Figure columns:24)
-// 畳み込み1(Activation:ReLU, Channel:16, Filter rows:5, Filter columns:5)
-//  層間パラメータ: 重み(Array[rows:5][columns:5][input_channel:1][output_channel:16]), バイアス(Array[output_channel:16])
+// Input(Channel:1, Figure rows:28, Figure columns:28)
+// Output(Channel:16, Figure rows:24, Figure columns:24)
+// Convolutional layer 1(Activation:ReLU, Channel:16, Filter rows:5, Filter columns:5)
+//  Parameter: Weights(Array[rows:5][columns:5][input_channel:1][output_channel:16]), Biases(Array[output_channel:16])
 //
 // keras_lay[1]
-// 入力(Channel:16, Figure rows:24, Figure columns:24)
-// 出力(Channel:16, Figure rows:12, Figure columns:12)
-// 最大プーリング1(Channel:16, Figure rows:12, Figure columns:12)
-//  層間パラメータ: なし
+// Input(Channel:16, Figure rows:24, Figure columns:24)
+// Output(Channel:16, Figure rows:12, Figure columns:12)
+// Max Pooling layer 1(Channel:16, Figure rows:12, Figure columns:12)
+//  Parameters: None
 //
 // keras_lay[2]
-// 入力(Channel:16, Figure rows:12, Figure columns:12)
-// 出力(Channel:32, Figure rows:8, Figure columns:8)
-// 畳み込み2(Activation:ReLU, Channel:32, Filter rows:5, Filter columns:5)
-//  層間パラメータ: 重み(Array[rows:5][columns:5][input_channel:16][output_channel:32]), バイアス(Array[output_channel:32])
+// Input (Channel:16, Figure rows:12, Figure columns:12)
+// Output(Channel:32, Figure rows:8, Figure columns:8)
+// Convolutional layer 2(Activation:ReLU, Channel:32, Filter rows:5, Filter columns:5)
+//  Parameters: Weights(Array[rows:5][columns:5][input_channel:16][output_channel:32]), Biases(Array[output_channel:32])
 //
 // keras_lay[3]
-// 入力(Channel:32, Figure rows:8, Figure columns:8)
-// 出力(Channel:32, Figure rows:4, Figure columns:4)
-// 最大プーリング2(Channel:32, Figure rows:4, Figure columns:4)
-//  層間パラメータ: なし
+// Input(Channel:32, Figure rows:8, Figure columns:8)
+// Output(Channel:32, Figure rows:4, Figure columns:4)
+// Max Pooling layer 2(Channel:32, Figure rows:4, Figure columns:4)
+//  Parameters: None
 //
 // keras_lay[4]
-// ドロップアウト(Dropout rate:0.25)
-// データフォーマット変化なし
-//  層間パラメータ: なし
+// Dropout(Dropout rate:0.25)
+// No data format conversion
+//  Parameters: None
 //
 // keras_lay[5]
-// 入力(Channel:32, Figure rows:4, Figure columns:4)
-// 出力(Channel:512)
-// 平滑化(Channel:512)
-//  層間パラメータ: なし
+// Input(Channel:32, Figure rows:4, Figure columns:4)
+// Output(Channel:512)
+// Flatten layer(Channel:512)
+//  Parameters: None
 //
 // keras_lay[6]
-// 入力(Channel:512)
-// 出力(Channel:128)
-// 全結合1(Activation:ReLU, Channel:128)
-//  層間パラメータ: 重み(Array[input_channel:512][output_channel:128]), バイアス(Array[output_channel:128])
+// Input(Channel:512)
+// Output(Channel:128)
+// Fully connected layer 1(Activation:ReLU, Channel:128)
+//  Parameters: Weights(Array[input_channel:512][output_channel:128]), Biases(Array[output_channel:128])
 //
 // keras_lay[7]
-// ドロップアウト(Dropout rate:0.5, Channel:128)
-// データフォーマット変化なし
-//  層間パラメータ: なし
+// Dropout(Dropout rate:0.5, Channel:128)
+// No data format conversion
+//  Parameters: None
 //
 // keras_lay[8]
-// 入力(Channel:128)
-// 出力(Channel:10)
-// 全結合2(Activation:Softmax, Channel:10)
-//  層間パラメータ: 重み(Array[input_channel:128][output_channel:10]), バイアス(Array[output_channel:10])
+// Input(Channel:128)
+// Output(Channel:10)
+// Fully connected layer 2(Activation:Softmax, Channel:10)
+//  Parameters: Weights(Array[input_channel:128][output_channel:10]), Biases(Array[output_channel:10])
 //
 
-//--- 層間パラメータ格納先アドレス ---
+//--- Addresses for Parameter ---
 // keras_lay[0]
 // biases{Array[16]}, weights{Array[5][5][1][16]}
 //  biases  0x20650000 - 0x20650040 (size 0x40)
@@ -87,36 +88,38 @@
 #define KERASLAYER8_BIASES (KERASLAYER6_WEIGHTS + 0x40000)
 #define KERASLAYER8_WEIGHTS (KERASLAYER8_BIASES + 0x28)
 
-//--- 層データ格納先アドレス ---
-// ※各層向けに独立した領域を確保しているがシーケンシャルな処理であるため本来は使いまわしても構わない
-// 入力層
-// サイズ(Channel:1, Figure rows:28, Figure columns:28)
+//--- Addresses for Layer ---
+// 
+// Input Layer
+//  Layer size(Channel:1, Figure rows:28, Figure columns:28)
 #define INPUTLAYER (KERASLAYER8_WEIGHTS + 0x1400)	// 0x206A0000 - 0x206A0C40 (size 0xC40)
-// 隠れ層1 (畳み込み1)
-// サイズ(Figure rows:24, Figure columns:24, Channel:16)
+// Hidden layer 1(Convolutional layer 1)
+//  Layer size(Figure rows:24, Figure columns:24, Channel:16)
 #define HIDDENLAYER1 (INPUTLAYER + 0xC40)	// 0x206A1000 - 0x206AA000 (size 0x9000)
-// 隠れ層2 (最大プーリング1)
-// サイズ(Figure rows:12, Figure columns:12, Channel:16)
+// Hidden layer 2(Max Pooling layer 1)
+//  Layer size(Figure rows:12, Figure columns:12, Channel:16)
 #define HIDDENLAYER2 (HIDDENLAYER1 + 0x9000)	// 0x206AB000 - 0x206AD400 (size 0x2400)
-// 隠れ層3 (畳み込み2)
-// サイズ(Figure rows:8, Figure columns:8, Channel:32)
+// Hidden layer 3(Convolutional layer 2)
+//  Layer size(Figure rows:8, Figure columns:8, Channel:32)
 #define HIDDENLAYER3 (HIDDENLAYER2 + 0x2400)	// 0x206AE000 - 0x206B0000 (size 0x2000)
-// 隠れ層4 (最大プーリング2)
-// サイズ(Figure rows:4, Figure columns:4, Channel:32)
+// Hidden layer 4(Max Pooling layer 2)
+//  Layer size(Figure rows:4, Figure columns:4, Channel:32)
 #define HIDDENLAYER4 (HIDDENLAYER3 + 0x2000)	// 0x206B0000 - 0x206B0800 (size 0x800)
-// 隠れ層5 (全結合1/入力は隠れ層4を平滑化したChannel:512)
-// サイズ(Channel:128)
+// Hidden layer 5(Fully connected layer 1/Input is Channel:512 data which has flatten hidden layer 4)
+//  Layer size(Channel:128)
 #define HIDDENLAYER5 (HIDDENLAYER4 + 0x800)	// 0x206B1000 - 0x206B1200 (size 0x200)
-// 出力層 (全結合2)
-// サイズ(Channel:10)
+// Output(Fully connected layer 2)
+//  Lyaer size(Channel:10)
 #define OUTPUTLAYER (HIDDENLAYER5 + 0x200)	// 0x206B1300 - 0x206B1328 (size 0x28)
 
-// テスト画像サイズ
+// Inference target image size
 #define IMAGE_ROWS		28
 #define IMAGE_COLUMNS	28
-#define TESTDATA 0x206C0000		// 0x206C0000 - 0x206C0C40 (size 0xC40)
+
+// Inference target image buffer 0x20400000 - 0x20400C40 (size 0xC40)
+#define TESTDATA 0x20400000
 
 int mnist_cnn_eval(
-		unsigned int *test,			// 入力：推論イメージ test[IMAGE_ROWS][IMAGE_COLUMNS]
-		unsigned int *result		// 出力：推論結果
+		unsigned int *test,			// Input: Inference target image test[IMAGE_ROWS][IMAGE_COLUMNS]
+		unsigned int *result		// Output: Inference result
 );

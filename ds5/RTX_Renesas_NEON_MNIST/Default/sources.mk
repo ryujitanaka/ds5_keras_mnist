@@ -1,5 +1,5 @@
 ################################################################################
-# 自動生成ファイルです。 編集しないでください!
+# Automatically-generated file. Do not edit!
 ################################################################################
 
 ASM_UPPER_SRCS := 
@@ -30,7 +30,7 @@ ASM_DEPS :=
 S_UPPER_DEPS := 
 CPP_DEPS := 
 
-# ソース・ファイルが入っているサブディレクトリーはすべて、ここに記述されていなければなりません
+# Every subdirectory with source files must be described here
 SUBDIRS := \
 ARM \
 . \

@@ -20,31 +20,6 @@ def getImageDir(ec):
     dir = dir.replace('\\', '/')
     return dir
 
-def loadImage(filepath):
-
-    fp = open(filepath, 'r')
-    image = ImageIO.read(fp)
-    fp.close()
-    
-    return image
-
-def storeImage(ec, store_adr, image):
-
-    adr = store_adr
-
-    # grayscale color image
-    start_adr = adr
-    for x in range(0, image.getWidth()):
-        for y in range(0, image.getHeight()):
-            pixel = image.getRGB(y, x) & 0xFF   # grayscale and transform to [row][col]
-            dscmd = 'memory set_typed S:0x%08x (unsigned int) %d' % (adr, pixel)
-            ec.executeDSCommand(dscmd)
-            adr += 0x4
-
-    #print ' image  S:0x%08x - S:0x%08x' % (start_adr, adr)
-
-    return adr
-
 def main():
 
     # Obtain the first execution context
@@ -54,15 +29,13 @@ def main():
     # Assumed the image file is located on the project folder
     imgDir = getImageDir(ec)
 
-    image = loadImage(imgDir + '/scripts/test.jpg')
-
     #--- store image ---
-    s_adr = 0x206C0000     # TESTDATA 0x206C0000 to 0x206C0C40 (size 0xC40)
+    s_adr = 0x20500000     # BARMAN_BUFFER 0x20500000 to 0x20800000 size 0x300000
 
-    e_adr = storeImage(ec, s_adr, image)
+    size = 0x300000
 
     #--- save stored parameters to binary file ---
-    dscmd = 'dump binary memory "RTX_Renesas_NEON_MNIST/scripts/ds5_test.bin" S:0x%08x S:0x%08x' % (s_adr, e_adr)
+    dscmd = 'dump memory "%s/barman.raw" S:0x%08x +S:0x%08x' % (imgDir, s_adr, size)
     ec.executeDSCommand(dscmd)
 
 

@@ -415,6 +415,8 @@ IRQ_Handler\
                 CPS     #Mode_SVC                   ; Switch to SVC mode, to avoid a nested interrupt corrupting LR on a BL
                 PUSH    {R0-R3, R12}                ; Save remaining APCS corruptible registers to SVC stack
 
+                LDR     R12, [SP, #0x14] ; Get IRQ return address off the stack and into R12, for use by bare-metal Streamline later
+
                 AND     R1, SP, #4                  ; Ensure stack is 8-byte aligned
                 SUB     SP, SP, R1                  ; Adjust stack
                 PUSH    {R1, LR}                    ; Store stack adjustment and LR_SVC to SVC stack
@@ -474,8 +476,10 @@ normal
                 BEQ     end_int
                 PUSH    {R0,R1}
 
+                MOV     R1, R12 ; Move IRQ return address into R1, for use by bare-metal Streamline later
+
                 CPSIE   i                           ; Now safe to re-enable interrupts
-                BLX     R2                          ; Call handler. R0 = IRQ number. Beware calls to PendSV_Handler and OS_Tick_Handler do not return this way
+                BLX     R2                          ; Call handler. R0 = IRQ number. R1 = IRQ return address. Beware calls to PendSV_Handler and OS_Tick_Handler do not return this way
                 CPSID   i                           ; Disable interrupts again
 
                 POP     {R0,R1}

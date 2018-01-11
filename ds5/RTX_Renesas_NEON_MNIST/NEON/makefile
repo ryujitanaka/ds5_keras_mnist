@@ -1,12 +1,12 @@
 ################################################################################
-# 自動生成ファイルです。 編集しないでください!
+# Automatically-generated file. Do not edit!
 ################################################################################
 
 -include ../makefile.init
 
 RM := clean
 
-# ビルドに関係するソースがすべて、ここに定義されています
+# All of the sources participating in the build are defined here
 -include sources.mk
 -include ARM/subdir.mk
 -include subdir.mk
@@ -53,20 +53,20 @@ endif
 
 -include ../makefile.defs
 
-# これらのツール呼び出しからの入力および出力をビルド変数へ追加します
+# Add inputs and outputs from these tool invocations to the build variables 
 
-# すべてのターゲット
+# All Target
 all: NEON-RZ_A1H_MNIST.axf
 
-# ツール呼び出し
+# Tool invocations
 NEON-RZ_A1H_MNIST.axf: $(OBJS) ../scatter.scat $(USER_OBJS) $(LIBS)
-	@echo 'ビルド・ターゲット: $@'
-	@echo '呼び出し中: ARM Linker 5'
-	armlink --cpu=Cortex-A9 --entry=__Vectors --scatter="../scatter.scat" --callgraph --map --info=sizes --info=totals --info=unused --info veneers --library_type=microlib --strict --summary_stderr --info summarysizes --xref --symbols --list NEON.map -o "NEON-RZ_A1H_MNIST.axf" $(OBJS) $(USER_OBJS) "C:/Users/ryutan01/Documents/DS-5 Workshop NEON/CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA9_L.lib"
-	@echo 'ビルド完了ターゲット: $@'
+	@echo 'Building target: $@'
+	@echo 'Invoking: ARM Linker 5'
+	armlink --cpu=Cortex-A9 --entry=__Vectors --scatter="../scatter.scat" --callgraph --map --info=sizes --info=totals --info=unused --info veneers --library_type=microlib --strict --summary_stderr --info summarysizes --xref --symbols --list NEON.map -o "NEON-RZ_A1H_MNIST.axf" $(OBJS) $(USER_OBJS) "C:/Users/ryutan01/Documents/DS-5 Workshop 1213/barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA9_L.lib"
+	@echo 'Finished building target: $@'
 	@echo ' '
 
-# その他のターゲット
+# Other Targets
 clean:
 	-$(RM) $(C_UPPER_DEPS) $(S_DEPS) $(C_DEPS) $(CC_DEPS) $(SX_DEPS) $(ASM_UPPER_DEPS) $(C++_DEPS) $(EXECUTABLES) $(CXX_DEPS) $(OBJS) $(SX_UPPER_DEPS) $(ASM_DEPS) $(S_UPPER_DEPS) $(CPP_DEPS) NEON-RZ_A1H_MNIST.axf 
 	-@echo ' '

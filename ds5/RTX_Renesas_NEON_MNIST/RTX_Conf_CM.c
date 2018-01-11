@@ -72,7 +72,7 @@
 //   <i> Defines the number of threads with user-provided stack size.
 //   <i> Default: 0
 #ifndef OS_PRIVCNT
- #define OS_PRIVCNT     1
+ #define OS_PRIVCNT     0
 #endif
 
 //   <o>Total stack size [bytes] for threads with user-provided stack size <0-1048576:8><#/4>
@@ -101,7 +101,7 @@
 //     <1=> Privileged mode
 //   <i> Default: Privileged mode
 #ifndef OS_RUNPRIV
- #define OS_RUNPRIV     0
+ #define OS_RUNPRIV     1
 #endif
 
 // </h>
@@ -223,7 +223,7 @@
  *---------------------------------------------------------------------------*/
 
 /*--------------------------- os_idle_demon ---------------------------------*/
-
+//extern void barman_wfi(void);
 /// \brief The idle demon is running when no other thread is ready to run
 void os_idle_demon (void) {
 
@@ -233,6 +233,7 @@ void os_idle_demon (void) {
       __SEV();
       __WFE();
       __WFE();
+//    barman_wfi();
   }
 }
 

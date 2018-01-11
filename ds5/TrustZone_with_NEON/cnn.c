@@ -15,21 +15,15 @@ typedef struct {
 	char relu_activation;
 } layer_structure;
 
-//--- 必要な処理リスト ---
-// 前処理(入力正規化)
-// 畳み込み
-// 最大プーリング
-// 全結合
-// 後処理(最大スコアの要素取得)
-// ReLU活性化関数
+//--- Required processes for inference ---
+// Pre-process(Input data normalization)
+// Convolution
+// Max pooling
+// Fully connection
+// Post-process(Get inference result)
+// ReLU activation
 
-//--- 推論のみなので不要な処理リスト ---
-// model compile時のoptimizer=keras.optimizers.Adadelta()は学習用の最適化手法なので不要
-// Dropoutは過学習抑制のためであり学習を行わないのであれば不要
-// Flattenはオフセット計算だけなので関数化の必要なし
-// MNISTでは１つの正解を導き出せばよいため直前の全結合層のスコアを求めるだけでSoftmaxによる正規化は不要（推論の自信を返す必要がある場合は後処理で行う）
-
-//--- ReLU活性化関数 ---
+//--- ReLU activation function ---
 float relu(float value)
 {
 	if (value < 0.0f) {
@@ -38,47 +32,47 @@ float relu(float value)
 	return value;
 }
 
-//--- 畳み込み ---
+//--- Convolution ---
 //
 // keras_lay[0]
-// 入力(Figure rows:28, Figure columns:28, Channel:1)
-// 出力(Figure rows:24, Figure columns:24, Channel:16)
-// 畳み込み1(Activation:ReLU, Filter rows:5, Filter columns:5, Channel:16)
-//  層間パラメータ: 重み(Array[rows:5][columns:5][input_channel:1][output_channel:16]), バイアス(Array[output_channel:16])
+// Input(Channel:1, Figure rows:28, Figure columns:28)
+// Output(Channel:16, Figure rows:24, Figure columns:24)
+// Convolutional layer 1(Activation:ReLU, Channel:16, Filter rows:5, Filter columns:5)
+//  Parameter: Weights(Array[rows:5][columns:5][input_channel:1][output_channel:16]), Biases(Array[output_channel:16])
 //
 // keras_lay[2]
-// 入力(Figure rows:12, Figure columns:12, Channel:16)
-// 出力(Figure rows:8, Figure columns:8, Channel:32)
-// 畳み込み2(Activation:ReLU, Filter rows:5, Filter columns:5, Channel:32)
-//  層間パラメータ: 重み(Array[rows:5][columns:5][input_channel:16][output_channel:32]), バイアス(Array[output_channnel:32])
+// Input (Channel:16, Figure rows:12, Figure columns:12)
+// Output(Channel:32, Figure rows:8, Figure columns:8)
+// Convolutional layer 2(Activation:ReLU, Channel:32, Filter rows:5, Filter columns:5)
+//  Parameters: Weights(Array[rows:5][columns:5][input_channel:16][output_channel:32]), Biases(Array[output_channel:32])
 //
-// Keras Conv2Dで明示的に指定していないデフォルト値(https://keras.io/ja/layers/convolutional/)
-//	strides=(1, 1)  : ストライド1
-//	padding='valid' : パディングしない(画像端の特徴には弱いがMNISTであれば大丈夫)
+// Keras Conv2D default values(https://keras.io/ja/layers/convolutional/)
+//	strides=(1, 1)  : Stride 1
+//	padding='valid' : No padding
 //
 int convolution(
 		layer_structure *lay,
-		float *inputs,	// 入力配列 inputs[lay->input_rows][lay->input_columns][lay->input_channel]
-		float *outputs,	// 出力配列 outputs[lay->output_rows][lay->output_columns][lay->output_channel]
-		float *weights,	// 重み配列 weights[lay->filter_rows][lay->filter_columns][lay->input_channel][lay->output_channel]
-		float *biases	// バイアス配列 biases[lay->output_channnel]
+		float *inputs,	// Input array: inputs[lay->input_rows][lay->input_columns][lay->input_channel]
+		float *outputs,	// Output array: outputs[lay->output_rows][lay->output_columns][lay->output_channel]
+		float *weights,	// Weights array: weights[lay->filter_rows][lay->filter_columns][lay->input_channel][lay->output_channel]
+		float *biases	// Biases array: biases[lay->output_channnel]
 ) {
-	unsigned int out_ch;		// 出力チャンネルインデックス
-	unsigned int in_ch;			// 入力チャンネルインデックス
-	unsigned int stride_row;	// ストライド行インデックス
-	unsigned int stride_col;	// ストライド列インデックス
-	unsigned int filter_row;	// フィルター行インデックス
-	unsigned int filter_col;	// フィルター列インデックス
-	float current_weight;		// 現在の重み値
-	float current_biase;		// 現在のバイアス値
-	float current_input;		// 現在の入力値
-	float current_result;		// 現在の計算結果
-	float kernel_result;		// カーネル単位の計算結果
+	unsigned int out_ch;		// Index for output channel
+	unsigned int in_ch;			// Index for input channel
+	unsigned int stride_row;	// Index for row of stride
+	unsigned int stride_col;	// Index for column of stride
+	unsigned int filter_row;	// Index for row of filter
+	unsigned int filter_col;	// Index for column of filter
+	float current_weight;		// Current weight value
+	float current_biase;		// Current bias value
+	float current_input;		// Current input value
+	float current_result;		// Current result
+	float kernel_result;		// Current result for kernel
 
-	// 出力配列の初期化
-	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// ストライド行方向ループ
-		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// ストライド列方向ループ
-			for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// 出力チャンネルループ
+	// Initialize output array
+	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// Loop for stride row
+		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// Loop for stride column
+			for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// Loop for output channel
 				((float*)outputs)[((stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
 												+(stride_col * lay->output_channel)			// [ ][x][ ]
 												+ out_ch)]                       			// [ ][ ][x]
@@ -87,25 +81,25 @@ int convolution(
 		}
 	}
 
-	// 重みの演算
-	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// ストライド行方向ループ
-		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// ストライド列方向ループ
-			for (filter_row = 0; filter_row < lay->filter_rows; filter_row++) {	// フィルター行方向ループ
-				for (filter_col = 0; filter_col < lay->filter_columns; filter_col++) {	// フィルター列方向ループ
-					for (in_ch = 0; in_ch < lay->input_channel; in_ch++) {	// 入力チャンネルループ
-						// 現在の入力値取得
+	// Calculate weights
+	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// Loop for stride row
+		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// Loop for stride column
+			for (filter_row = 0; filter_row < lay->filter_rows; filter_row++) {	// Loop for filter row
+				for (filter_col = 0; filter_col < lay->filter_columns; filter_col++) {	// Loop for filter column
+					for (in_ch = 0; in_ch < lay->input_channel; in_ch++) {	// Loop for input channnel
+						// Get current input value
 						current_input = ((float*)inputs)[  ((stride_row + filter_row) * lay->input_columns * lay->input_channel)	// [x][ ][ ]
 														 + ((stride_col + filter_col)                      * lay->input_channel)	// [ ][x][ ]
 														 + in_ch];																	// [ ][ ][x]
-						for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// 出力チャンネルループ
-							// 現在の重みパラメータ取得
+						for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// Loop for output channel
+							// Get current weight value
 							current_weight = ((float*)weights)[  (filter_row * lay->filter_columns * lay->input_channel * lay->output_channel)	// [x][ ][ ][ ]
 															   + (filter_col                       * lay->input_channel * lay->output_channel)	// [ ][x][ ][ ]
 															   + (in_ch                                                 * lay->output_channel)	// [ ][ ][x][ ]
 															   + out_ch];																		// [ ][ ][ ][x]
-							// 入力 * 重み
+							// Input * weight
 							current_result = current_input * current_weight;
-							// 出力先に加算
+							// Add to outputs
 							((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
 									          + (stride_col                       * lay->output_channel)	// [ ][x][ ]
 											  + out_ch]                       								// [ ][ ][x]
@@ -115,22 +109,21 @@ int convolution(
 
 				}
 			}
-			// 出力
 		}
 	}
 
-	// バイアスを加算
-	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// ストライド行方向ループ
-		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// ストライド列方向ループ
-			for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// 出力チャンネルループ
-				// 現在のバイアス値を取得
+	// Add biases
+	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// Loop for stride row
+		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// Loop for stride column
+			for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// Loop for output channel
+				// Get current bias value
 				current_biase = ((float*)biases)[out_ch];
-				// 出力先にバイアスを加算
+				// Add current bias value to output
 				((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
 						          + (stride_col                       * lay->output_channel)	// [ ][x][ ]
 								  + out_ch]                       								// [ ][ ][x]
 				+= current_biase;
-				// 活性化関数
+				// Activation function
 				if (lay->relu_activation == 1) {
 					kernel_result = ((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
 													  + (stride_col                       * lay->output_channel)	// [ ][x][ ]
@@ -147,58 +140,58 @@ int convolution(
 	return 0;
 }
 
-//--- MAXプーリング ---
+//--- Max pooling ---
 //
 // keras_lay[1]
-// 入力(Figure rows:24, Figure columns:24, Channel:16)
-// 出力(Figure rows:12, Figure columns:12, Channel:16)
-// 最大プーリング1(Channel:16, Figure rows:12, Figure columns:12)
-//  層間パラメータ: なし
+// Input(Channel:16, Figure rows:24, Figure columns:24)
+// Output(Channel:16, Figure rows:12, Figure columns:12)
+// Max Pooling layer 1(Channel:16, Figure rows:12, Figure columns:12)
+//  Parameters: None
 //
 // keras_lay[3]
-// 入力(Figure rows:8, Figure columns:8, Channel:32)
-// 出力(Figure rows:4, Figure columns:4, Channel:32)
-// 最大プーリング2(Channel:32, Figure rows:4, Figure columns:4)
-//  層間パラメータ: なし
+// Input(Channel:32, Figure rows:8, Figure columns:8)
+// Output(Channel:32, Figure rows:4, Figure columns:4)
+// Max Pooling layer 2(Channel:32, Figure rows:4, Figure columns:4)
+//  Parameters: None
 //
 int max_pooling(
 		layer_structure *lay,
-		float *inputs,	// 入力配列 inputs[lay->input_rows][lay->input_columns][lay->input_channel]
-		float *outputs	// 出力配列 outputs[lay->output_rows][lay->output_columns][lay->output_channel]
+		float *inputs,	// Input array: inputs[lay->input_rows][lay->input_columns][lay->input_channel]
+		float *outputs	// Output array: outputs[lay->output_rows][lay->output_columns][lay->output_channel]
 ) {
-	unsigned int ch;			// チャンネルインデックス
-	unsigned int input_row;		// 入力行インデックス
-	unsigned int input_col;		// 入力列インデックス
-	unsigned int output_row;	// 出力行インデックス
-	unsigned int output_col;	// 出力列インデックス
-	unsigned int filter_row;	// フィルター行インデックス
-	unsigned int filter_col;	// フィルター列インデックス
-	float current_max;			// 現在の最大値
-	float current_value;		// 現在の値
+	unsigned int ch;			// Offset for channel
+	unsigned int input_row;		// Offset for row of input
+	unsigned int input_col;		// Offset for column of input
+	unsigned int output_row;	// Offset for row of output
+	unsigned int output_col;	// Offset for column of output
+	unsigned int filter_row;	// Offset for row of filter
+	unsigned int filter_col;	// Offset for column of filter
+	float current_max;			// Current maximum value
+	float current_value;		// Current value
 
-	for (ch = 0; ch < lay->input_channel; ch++) {	// チャンネル
+	for (ch = 0; ch < lay->input_channel; ch++) {	// Loop for channel
 		output_row = 0;
-		for (input_row = 0; input_row < lay->input_rows; input_row += lay->filter_rows) {	// 行 (フィルターサイズ刻み)
+		for (input_row = 0; input_row < lay->input_rows; input_row += lay->filter_rows) {	// Loop for row of input(Including filter size)
 			output_col = 0;
-			for (input_col = 0; input_col < lay->input_columns; input_col += lay->filter_columns) {	// 列 (フィルターサイズ刻み)
+			for (input_col = 0; input_col < lay->input_columns; input_col += lay->filter_columns) {	// Loop for column of input(Including filter size)
 
-				// フィルター内の最大値取得
-				for (filter_row = 0; filter_row < lay->filter_rows; filter_row++) {	// フィルター行
-					for (filter_col = 0; filter_col < lay->filter_columns; filter_col++) {	// フィルター列
-						// 現在の入力値取得
+				// Get maximum value of the filter
+				for (filter_row = 0; filter_row < lay->filter_rows; filter_row++) {	// Row of filter
+					for (filter_col = 0; filter_col < lay->filter_columns; filter_col++) {	// Column of filter
+						// Get current input value
 						current_value = ((float*)inputs)[((input_row + filter_row) * lay->input_columns * lay->input_channel)
 														+ ((input_col + filter_col) * lay->input_channel)
 														+ ch];
-						if (filter_row == 0 && filter_col == 0) {	// 初回(負の値もあり得るため)
+						if (filter_row == 0 && filter_col == 0) {	// First time(for the negative number)
 							current_max = current_value;
 						}
-						else if (current_max < current_value) {		// ２回目以降最大値更新
+						else if (current_max < current_value) {		// Update the maximum value
 							current_max = current_value;
 						}
 					}
 				}
 
-				// 出力配列へ格納
+				// Store current maximum value to output
 				((float*)outputs)[(output_row * lay->output_columns * lay->output_channel)
 								  + (output_col * lay->output_channel)
 								  + ch] = current_max;
@@ -212,60 +205,60 @@ int max_pooling(
 	return 0;
 }
 
-//--- 全結合 ---
+//--- Fully connected layer ---
 //
 // keras_lay[6]
-// 入力(Channel:512)
-// 出力(Channel:128)
-// 全結合(Activation:ReLU, Channel:128)
-//  層間パラメータ: 重み(Array[input_channel:512][output_channel:128]), バイアス(Array[output_channel:128])
+// Input(Channel:512)
+// Output(Channel:128)
+// Fully connected layer 1(Activation:ReLU, Channel:128)
+//  Parameters: Weights(Array[input_channel:512][output_channel:128]), Biases(Array[output_channel:128])
 //
 // keras_lay[8]
-// 入力(Channel:128)
-// 出力(Channel:10)
-// 全結合(Activation:Softmax, Channel:10)
-//  層間パラメータ: 重み(Array[input_channel:128][output_channel:10]), バイアス(Array[output_channel:10])
+// Input(Channel:128)
+// Output(Channel:10)
+// Fully connected layer 2(Activation:Softmax, Channel:10)
+//  Parameters: Weights(Array[input_channel:128][output_channel:10]), Biases(Array[output_channel:10])
 //
 int fully_connected(
 		layer_structure *lay,
-		float *inputs,	// 入力配列 inputs[lay->input_channel]
-		float *outputs,	// 出力配列 outputs[lay->output_channel]
-		float *weights,	// 重み配列 weights[lay->filter_rows][lay->filter_columns]
-		float *biases	// バイアス配列 biases[lay->output_channnel]
+		float *inputs,	// Input array: inputs[lay->input_channel]
+		float *outputs,	// Output array: outputs[lay->output_channel]
+		float *weights,	// Weights array: weights[lay->filter_rows][lay->filter_columns]
+		float *biases	// Biases array: biases[lay->output_channnel]
 ) {
-	unsigned int o;				// 出力配列インデックス
-	unsigned int i;				// 入力配列インデックス
-	float current_weight;		// 現在の重み値
-	float current_biase;		// 現在のバイアス値
-	float current_input;		// 現在の入力値
-	float current_out;			// 現在の出力値
+	unsigned int o;				// Offset for output
+	unsigned int i;				// Offset for input
+	float current_weight;		// Current weight value
+	float current_biase;		// Current bias value
+	float current_input;		// Current input value
+	float current_out;			// Current output value
 
-	for (o = 0; o < lay->output_channel; o++) {	// 出力配列(keras_lay[6]=128, keras_lay[8]=10)
-		// 現在のバイアス値取得
+	for (o = 0; o < lay->output_channel; o++) {	// Loop for output array(keras_lay[6]=128, keras_lay[8]=10)
+		// Get current bias value
 		current_biase = ((float*)biases)[o];
 		current_out = 0.0f;
-		for (i = 0; i < lay->input_channel; i++) {	// 入力配列(keras_lay[6]=512, keras_lay[8]=128)
-			// 現在の入力値取得
+		for (i = 0; i < lay->input_channel; i++) {	// Loop for input array(keras_lay[6]=512, keras_lay[8]=128)
+			// Get current input value
 			current_input = ((float*)inputs)[i];
-			// 現在の重み値取得
+			// Get current weight value
 			current_weight = ((float*)weights)[(i * lay->output_channel) + o];
-			// 入力 * 重み
+			// Input * Weight
 			current_out += (current_input * current_weight);
 		}
-		// 合計値 + バイアス
+		// sum + bias
 		current_out +=  current_biase;
-		// 活性化関数
+		// Activation function
 		if (lay->relu_activation == 1) {
 			current_out = relu(current_out);
 		}
-		// 出力配列へ格納
+		// Store current output value to output array
 		((float*)outputs)[o] = current_out;
 	}
 
 	return 0;
 }
 
-// 前処理
+// Pre process
 int pre_proc(
 		unsigned int *test_images,	// test_images[IMAGE_ROWS][IMAGE_COLUMNS]
 		float *outputs				// output[IMAGE_ROWS][IMAGE_COLUMNS]
@@ -274,7 +267,7 @@ int pre_proc(
 	float normalized;
 	unsigned int row, col;
 
-	// 画像データの値を256階調グレースケールから0.0～1.0に正規化
+	// Nomalize input image data from 0.0 to 1.0
 	for (row = 0; row < IMAGE_ROWS; row++) {
 		for (col = 0; col < IMAGE_COLUMNS; col++) {
 			current_input = ((unsigned int*)test_images)[row * IMAGE_COLUMNS + col];
@@ -286,15 +279,15 @@ int pre_proc(
 	return 0;
 }
 
-// 後処理
+// Post process
 int post_proc(
-		float *outlay,			// 出力層 outlay[channel]
-		unsigned int channel	// 出力層チャンネル数
+		float *outlay,			// Output layer: outlay[channel]
+		unsigned int channel	// Output layer channnel number
 ) {
 	unsigned int idx, idx_max;
 	float conf, conf_max;
 
-	// 出力層から最もスコアが高いインデックスを検索
+	// Get the index for maximum score of output layer
 	idx_max = 0;
 	conf_max = 0.0f;
 	for( idx = 0; idx < channel; idx++ ){
@@ -309,19 +302,19 @@ int post_proc(
 }
 
 int mnist_cnn_eval(
-		unsigned int *test_images,	// 入力：推論イメージ test_images[IMAGE_ROWS][IMAGE_COLUMNS]
-		unsigned int *result		// 出力：推論結果
+		unsigned int *test_images,	// Input(Inference target image): test_images[IMAGE_ROWS][IMAGE_COLUMNS]
+		unsigned int *result		// Output(Inference result)
 ) {
 	static layer_structure lay;
 
-	// 前処理
+	// Pre process
 	pre_proc(test_images, (float*)INPUTLAYER);
 
 	// keras_lay[0]
-	// 入力(Figure rows:28, Figure columns:28, Channel:1)
-	// 出力(Figure rows:24, Figure columns:24, Channel:16)
-	// 畳み込み1(Activation:ReLU, Filter rows:5, Filter columns:5, Channel:16)
-	//  層間パラメータ: 重み(Array[rows:5][columns:5][input_channel:1][output_channel:16]), バイアス(Array[output_channel:16])
+	// Input(Channel:1, Figure rows:28, Figure columns:28)
+	// Output(Channel:16, Figure rows:24, Figure columns:24)
+	// Convolutional layer 1(Activation:ReLU, Channel:16, Filter rows:5, Filter columns:5)
+	//  Parameter: Weights(Array[rows:5][columns:5][input_channel:1][output_channel:16]), Biases(Array[output_channel:16])
 	lay.input_channel = 1;
 	lay.input_rows = 28;
 	lay.input_columns = 28;
@@ -338,10 +331,10 @@ int mnist_cnn_eval(
 			(float*)KERASLAYER0_BIASES);
 
 	// keras_lay[1]
-	// 入力(Figure rows:24, Figure columns:24, Channel:16)
-	// 出力(Figure rows:12, Figure columns:12, Channel:16)
-	// 最大プーリング1(Figure rows:12, Figure columns:12, Channel:16)
-	//  層間パラメータ: なし
+	// Input(Channel:16, Figure rows:24, Figure columns:24)
+	// Output(Channel:16, Figure rows:12, Figure columns:12)
+	// Max Pooling layer 1(Channel:16, Figure rows:12, Figure columns:12)
+	//  Parameters: None
 	lay.input_channel = 16;
 	lay.input_rows = 24;
 	lay.input_columns = 24;
@@ -354,10 +347,10 @@ int mnist_cnn_eval(
 	max_pooling(&lay, (float*)HIDDENLAYER1, (float*)HIDDENLAYER2);
 
 	// keras_lay[2]
-	// 入力(Figure rows:12, Figure columns:12, Channel:16)
-	// 出力(Figure rows:8, Figure columns:8, Channel:32)
-	// 畳み込み2(Activation:ReLU, Filter rows:5, Filter columns:5, Channel:32)
-	//  層間パラメータ: 重み(Array[rows:5][columns:5][input_channel:16][output_channel:32]), バイアス(Array[output_channnel:32])
+	// Input (Channel:16, Figure rows:12, Figure columns:12)
+	// Output(Channel:32, Figure rows:8, Figure columns:8)
+	// Convolutional layer 2(Activation:ReLU, Channel:32, Filter rows:5, Filter columns:5)
+	//  Parameters: Weights(Array[rows:5][columns:5][input_channel:16][output_channel:32]), Biases(Array[output_channel:32])
 	lay.input_channel = 16;
 	lay.input_rows = 12;
 	lay.input_columns = 12;
@@ -374,10 +367,10 @@ int mnist_cnn_eval(
 			(float*)KERASLAYER2_BIASES);
 
 	// keras_lay[3]
-	// 入力(Figure rows:8, Figure columns:8, Channel:32)
-	// 出力(Figure rows:4, Figure columns:4, Channel:32)
-	// 最大プーリング2(Figure rows:4, Figure columns:4, Channel:32)
-	//  層間パラメータ: なし
+	// Input(Channel:32, Figure rows:8, Figure columns:8)
+	// Output(Channel:32, Figure rows:4, Figure columns:4)
+	// Max Pooling layer 2(Channel:32, Figure rows:4, Figure columns:4)
+	//  Parameters: None
 	lay.input_channel = 32;
 	lay.input_rows = 8;
 	lay.input_columns = 8;
@@ -390,21 +383,21 @@ int mnist_cnn_eval(
 	max_pooling(&lay, (float*)HIDDENLAYER3, (float*)HIDDENLAYER4);
 
 	// keras_lay[4]
-	// ドロップアウト(Dropout rate:0.25)
-	// データフォーマット変化なし
-	//  層間パラメータ: なし
+	// Dropout(Dropout rate:0.25)
+	// No data format conversion
+	//  Parameters: None
 
 	// keras_lay[5]
-	// 入力(Figure rows:4, Figure columns:4, Channel:32)
-	// 出力(Channel:512)
-	// 平滑化(Channel:512)
-	//  層間パラメータ: なし
+	// Input(Channel:32, Figure rows:4, Figure columns:4)
+	// Output(Channel:512)
+	// Flatten layer(Channel:512)
+	//  Parameters: None
 
 	// keras_lay[6]
-	// 入力(Channel:512)
-	// 出力(Channel:128)
-	// 全結合1(Activation:ReLU, Channel:128)
-	//  層間パラメータ: 重み(Array[input_channel:512][output_channel:128]), バイアス(Array[output_channel:128])
+	// Input(Channel:512)
+	// Output(Channel:128)
+	// Fully connected layer 1(Activation:ReLU, Channel:128)
+	//  Parameters: Weights(Array[input_channel:512][output_channel:128]), Biases(Array[output_channel:128])
 	lay.input_channel = 512;
 	lay.input_rows = 0;
 	lay.input_columns = 0;
@@ -421,15 +414,15 @@ int mnist_cnn_eval(
 			(float*)KERASLAYER6_BIASES);
 
 	// keras_lay[7]
-	// ドロップアウト(Dropout rate:0.5, Channel:128)
-	// データフォーマット変化なし
-	//  層間パラメータ: なし
+	// Dropout(Dropout rate:0.5, Channel:128)
+	// No data format conversion
+	//  Parameters: None
 
 	// keras_lay[8]
-	// 入力(Channel:128)
-	// 出力(Channel:10)
-	// 全結合2(Activation:Softmax, Channel:10)
-	//  層間パラメータ: 重み(Array[input_channel:128][output_channel:10]), バイアス(Array[output_channel:10])
+	// Input(Channel:128)
+	// Output(Channel:10)
+	// Fully connected layer 2(Activation:Softmax, Channel:10)
+	//  Parameters: Weights(Array[input_channel:128][output_channel:10]), Biases(Array[output_channel:10])
 	lay.input_channel = 128;
 	lay.input_rows = 0;
 	lay.input_columns = 0;
@@ -445,8 +438,7 @@ int mnist_cnn_eval(
 			(float*)KERASLAYER8_WEIGHTS,
 			(float*)KERASLAYER8_BIASES);
 
-	// 後処理
-	// 最もスコアが高いインデックスを返す
+	// Post process
 	*result = post_proc((float*)OUTPUTLAYER, lay.output_channel);
 
 	return 0;

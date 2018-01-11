@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bare-metal-agent version="1">
+	<runtime-config-defaults>
+		<use-builtin-memfuncs>true</use-builtin-memfuncs>
+		<enable-debug-logging>false</enable-debug-logging>
+		<enable-logging>false</enable-logging>
+		<max-processors>1</max-processors>
+		<max-mmap-layout-entries>0</max-mmap-layout-entries>
+		<max-task-entries>8</max-task-entries>
+		<min-sample-period>0</min-sample-period>
+	</runtime-config-defaults>
+	<data-store>linear</data-store>
+	<target-name>null</target-name>
+	<processors>
+		<processor name="ARMv7_Cortex_A9" cpuid="0x41c09" cycle-counter="true">
+			<event type="0x68"/>
+			<event type="0x70"/>
+			<event type="0x71"/>
+			<event type="0x72"/>
+			<event type="0x73"/>
+			<event type="0x74"/>
+		</processor>
+	</processors>
+	<custom-charts>
+	</custom-charts>
+</bare-metal-agent>
