@@ -1,0 +1,9 @@
+Capture
+duration: 0.062 s
+
+Target
+system date: Thu Jan 01 09:00:00 JST 1970
+uptime: 0.0 s
+monotonic delta: 0.0 s
+time of day since Unix epoch: 0 ns
+core 0: ARMv7_Cortex_A9 (0x41c09)

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.arm.eclipse.build.config.baremetal.lib.debug.709067982.719906596">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.arm.eclipse.build.config.baremetal.lib.debug.709067982.719906596" moduleId="org.eclipse.cdt.core.settings" name="A5_Debug">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/barman-RTXv4_AR_Library"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/barman-RTXv4_AR_Library/A5_Debug"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="../../barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA5_L" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.arm.eclipse.builder.armcc.error" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="lib" artifactName="../../barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA5_L" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="clean" description="" id="com.arm.eclipse.build.config.baremetal.lib.debug.709067982.719906596" name="A5_Debug" parent="com.arm.eclipse.build.config.baremetal.lib.debug">
+					<folderInfo id="com.arm.eclipse.build.config.baremetal.lib.debug.709067982.719906596." name="/" resourcePath="">
+						<toolChain id="com.arm.toolchain.baremetal.lib.debug.1700771014" name="ARM Compiler 5" superClass="com.arm.toolchain.baremetal.lib.debug">
+							<targetPlatform id="com.arm.toolchain.baremetal.lib.debug.1700771014.874914759" name=""/>
+							<builder buildPath="${workspace_loc:/RTX_CA5_L.lib/Debug}" id="com.arm.toolchain.baremetal.builder.586828307" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.toolchain.baremetal.builder"/>
+							<tool command="armcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.arm.tool.c.compiler.baremetal.lib.debug.1518094427" name="ARM C Compiler 5" superClass="com.arm.tool.c.compiler.baremetal.lib.debug">
+								<option id="com.arm.tool.c.compiler.option.defmac.1405165241" name="Define macro (-D)" superClass="com.arm.tool.c.compiler.option.defmac" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__CMSIS_RTOS"/>
+									<listOptionValue builtIn="false" value="__CORTEX_Ax"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.incpath.81368468" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value=".."/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/INC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/Include}&quot;"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.inter.1854477223" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.targetcpu.1777824164" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" useByScannerDiscovery="true" value="Cortex-A5.neon" valueType="string"/>
+								<option id="com.arm.tool.c.compiler.option.inst.1844682295" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.endian.1729371435" name="Byte order" superClass="com.arm.tool.c.compiler.option.endian" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.flags.1375481614" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" useByScannerDiscovery="true" valueType="stringList">
+									<listOptionValue builtIn="false" value="--split_sections"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.suppress.1802366607" name="Suppress (--diag_suppress)" superClass="com.arm.tool.c.compiler.option.suppress" useByScannerDiscovery="false" value="1786,3731" valueType="string"/>
+								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.c.compiler.baremetal.lib.debug.base.option.opt.1658965694" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.lib.debug.base.option.opt" useByScannerDiscovery="true" valueType="enumerated"/>
+								<inputType id="com.arm.tool.c.compiler.input.973539664" superClass="com.arm.tool.c.compiler.input"/>
+								<inputType id="com.arm.tool.cpp.compiler.input.103152549" superClass="com.arm.tool.cpp.compiler.input"/>
+							</tool>
+							<tool id="com.arm.tool.cpp.compiler.baremetal.lib.debug.52744139" name="ARM C++ Compiler 5" superClass="com.arm.tool.cpp.compiler.baremetal.lib.debug">
+								<option id="com.arm.tool.c.compiler.option.defmac.699226958" name="Define macro (-D)" superClass="com.arm.tool.c.compiler.option.defmac" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__CMSIS_RTOS"/>
+									<listOptionValue builtIn="false" value="__CORTEX_Ax"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.incpath.389329571" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value=".."/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/INC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/Include}&quot;"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.inter.464982204" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.targetcpu.1739800938" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" value="Cortex-A5" valueType="string"/>
+								<option id="com.arm.tool.c.compiler.option.inst.64907897" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.endian.1563772054" name="Byte order" superClass="com.arm.tool.c.compiler.option.endian" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.flags.1510429947" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" valueType="stringList">
+									<listOptionValue builtIn="false" value="--split_sections"/>
+								</option>
+								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.cpp.compiler.baremetal.lib.debug.base.option.opt.1500382473" name="Optimization level" superClass="com.arm.tool.cpp.compiler.baremetal.lib.debug.base.option.opt" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.suppress.2022657290" name="Suppress (--diag_suppress)" superClass="com.arm.tool.c.compiler.option.suppress" value="1786,3731" valueType="string"/>
+							</tool>
+							<tool id="com.arm.tool.assembler.1212674682" name="ARM Assembler 5" superClass="com.arm.tool.assembler">
+								<option id="com.arm.tool.assembler.option.inter.1476575567" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.assembler.option.inter" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.assembler.option.cpu.1382392786" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" value="Cortex-A5.neon" valueType="string"/>
+								<option id="com.arm.tool.assembler.option.flags.1164414947" name="Other flags" superClass="com.arm.tool.assembler.option.flags" valueType="stringList">
+									<listOptionValue builtIn="false" value="--pd &quot;__CMSIS_RTOS SETA 1&quot; --pd &quot;__FPU_PRESENT SETA 1&quot;"/>
+								</option>
+								<inputType id="com.arm.tool.assembler.input.1299111061" superClass="com.arm.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.tool.c.linker.1279181809" name="ARM Linker 5" superClass="com.arm.tool.c.linker"/>
+							<tool id="com.arm.tool.librarian.1096596749" name="ARM Librarian 5" superClass="com.arm.tool.librarian">
+								<option id="com.arm.tool.librarion.option.misc.391716722" name="Other flags" superClass="com.arm.tool.librarion.option.misc" valueType="stringList">
+									<listOptionValue builtIn="false" value="-rv"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="com.arm.eclipse.build.config.baremetal.lib.debug.709067982.719906596.rt_HAL_CM.h" name="rt_HAL_CM.h" rcbsApplicability="disable" resourcePath="rt_HAL_CM.h" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="ARM/HAL_CR4.c|ARM/HAL_CA7.c|ARM/HAL_CA9.c|ARM/HAL_CM4.c|ARM/HAL_CM3.c|ARM/HAL_CM0.c|rt_HAL_CM.h|HAL_CM.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.arm.eclipse.build.config.baremetal.lib.release.997273496.1912934936">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.arm.eclipse.build.config.baremetal.lib.release.997273496.1912934936" moduleId="org.eclipse.cdt.core.settings" name="A5_Release">
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/barman-RTXv4_AR_Library"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/barman-RTXv4_AR_Library/A5_Release"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="../../barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA5_L" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.arm.eclipse.builder.armcc.error" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="lib" artifactName="../../barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA5_L" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.staticLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.staticLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="clean" description="" id="com.arm.eclipse.build.config.baremetal.lib.release.997273496.1912934936" name="A5_Release" parent="com.arm.eclipse.build.config.baremetal.lib.release">
+					<folderInfo id="com.arm.eclipse.build.config.baremetal.lib.release.997273496.1912934936." name="/" resourcePath="">
+						<toolChain id="com.arm.toolchain.baremetal.lib.release.1115872383" name="ARM Compiler 5" superClass="com.arm.toolchain.baremetal.lib.release">
+							<targetPlatform id="com.arm.toolchain.baremetal.lib.release.1115872383.1248905551" name=""/>
+							<builder buildPath="${workspace_loc:/RTX_CA5_L.lib/Release}" id="com.arm.toolchain.baremetal.builder.816848915" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.toolchain.baremetal.builder"/>
+							<tool id="com.arm.tool.c.compiler.baremetal.lib.release.1774569142" name="ARM C Compiler 5" superClass="com.arm.tool.c.compiler.baremetal.lib.release">
+								<option id="com.arm.tool.c.compiler.option.defmac.1616706845" name="Define macro (-D)" superClass="com.arm.tool.c.compiler.option.defmac" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__CMSIS_RTOS"/>
+									<listOptionValue builtIn="false" value="__CORTEX_Ax"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.incpath.1814461306" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value=".."/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/INC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/Include}&quot;"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.inter.1843221411" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.targetcpu.343298780" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" useByScannerDiscovery="true" value="Cortex-A5.neon" valueType="string"/>
+								<option id="com.arm.tool.c.compiler.option.inst.164371655" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.endian.1388745460" name="Byte order" superClass="com.arm.tool.c.compiler.option.endian" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.flags.1821786582" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" useByScannerDiscovery="true" valueType="stringList">
+									<listOptionValue builtIn="false" value="--split_sections"/>
+								</option>
+								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.high" id="com.arm.tool.c.compiler.baremetal.lib.release.base.option.opt.1737266395" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.lib.release.base.option.opt" useByScannerDiscovery="true" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.suppress.1721608711" name="Suppress (--diag_suppress)" superClass="com.arm.tool.c.compiler.option.suppress" useByScannerDiscovery="false" value="1786,3731" valueType="string"/>
+								<inputType id="com.arm.tool.c.compiler.input.1084468776" superClass="com.arm.tool.c.compiler.input"/>
+								<inputType id="com.arm.tool.cpp.compiler.input.1755964998" superClass="com.arm.tool.cpp.compiler.input"/>
+							</tool>
+							<tool id="com.arm.tool.cpp.compiler.baremetal.lib.release.1404521798" name="ARM C++ Compiler 5" superClass="com.arm.tool.cpp.compiler.baremetal.lib.release">
+								<option id="com.arm.tool.c.compiler.option.defmac.550976780" name="Define macro (-D)" superClass="com.arm.tool.c.compiler.option.defmac" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__CMSIS_RTOS"/>
+									<listOptionValue builtIn="false" value="__CORTEX_Ax"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.incpath.1821397449" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" valueType="includePath">
+									<listOptionValue builtIn="false" value=".."/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/INC}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/Include}&quot;"/>
+								</option>
+								<option id="com.arm.tool.c.compiler.option.inter.1849725228" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.targetcpu.1751561228" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" value="Cortex-A5" valueType="string"/>
+								<option id="com.arm.tool.c.compiler.option.inst.755342587" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.endian.1924940420" name="Byte order" superClass="com.arm.tool.c.compiler.option.endian" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.flags.263932452" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" valueType="stringList">
+									<listOptionValue builtIn="false" value="--split_sections"/>
+								</option>
+								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.high" id="com.arm.tool.cpp.compiler.baremetal.lib.release.base.option.opt.1366571995" name="Optimization level" superClass="com.arm.tool.cpp.compiler.baremetal.lib.release.base.option.opt" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.suppress.331325790" name="Suppress (--diag_suppress)" superClass="com.arm.tool.c.compiler.option.suppress" value="1786,3731" valueType="string"/>
+							</tool>
+							<tool id="com.arm.tool.assembler.2103365733" name="ARM Assembler 5" superClass="com.arm.tool.assembler">
+								<option id="com.arm.tool.assembler.option.inter.391462019" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.assembler.option.inter" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.assembler.option.cpu.1458702958" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" value="Cortex-A5.neon" valueType="string"/>
+								<option id="com.arm.tool.assembler.option.flags.1827626978" name="Other flags" superClass="com.arm.tool.assembler.option.flags" valueType="stringList">
+									<listOptionValue builtIn="false" value="--pd &quot;__CMSIS_RTOS SETA 1&quot; --pd &quot;__FPU_PRESENT SETA 1&quot;"/>
+								</option>
+								<inputType id="com.arm.tool.assembler.input.2058835112" superClass="com.arm.tool.assembler.input"/>
+							</tool>
+							<tool id="com.arm.tool.c.linker.201221908" name="ARM Linker 5" superClass="com.arm.tool.c.linker"/>
+							<tool id="com.arm.tool.librarian.1021971077" name="ARM Librarian 5" superClass="com.arm.tool.librarian">
+								<option id="com.arm.tool.librarion.option.misc.1942619720" name="Other flags" superClass="com.arm.tool.librarion.option.misc" valueType="stringList">
+									<listOptionValue builtIn="false" value="-rv"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="com.arm.eclipse.build.config.baremetal.lib.release.997273496.1912934936.rt_HAL_CM.h" name="rt_HAL_CM.h" rcbsApplicability="disable" resourcePath="rt_HAL_CM.h" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="ARM/HAL_CR4.c|ARM/HAL_CA7.c|ARM/HAL_CA9.c|ARM/HAL_CM4.c|ARM/HAL_CM3.c|ARM/HAL_CM0.c|rt_HAL_CM.h|HAL_CM.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="RTX_CA5_L.lib.com.arm.eclipse.build.project.baremetal.lib.841522482" name="Bare-metal Library" projectType="com.arm.eclipse.build.project.baremetal.lib"/>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="A5_Release"/>
+		<configuration configurationName="A5_Debug"/>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/barman-RTXv4_AR_Library"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/barman-RTXv4_AR_Library"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.arm.eclipse.build.config.baremetal.lib.debug.709067982;com.arm.eclipse.build.config.baremetal.lib.debug.709067982.;com.arm.tool.c.compiler.baremetal.lib.debug.1485393995;com.arm.tool.c.compiler.input.1387440577">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.arm.eclipse.builder.armcc.ARMCompilerDiscoveryProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.arm.eclipse.build.config.baremetal.lib.debug.709067982;com.arm.eclipse.build.config.baremetal.lib.debug.709067982.;com.arm.tool.c.compiler.baremetal.lib.debug.1485393995;com.arm.tool.cpp.compiler.input.946102040">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.arm.eclipse.builder.armcc.ARMCompilerDiscoveryProfile"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>

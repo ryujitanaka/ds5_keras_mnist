@@ -62,7 +62,7 @@ all: NEON-RZ_A1H_MNIST.axf
 NEON-RZ_A1H_MNIST.axf: $(OBJS) ../scatter.scat $(USER_OBJS) $(LIBS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker 5'
-	armlink --cpu=Cortex-A9 --entry=__Vectors --scatter="../scatter.scat" --callgraph --map --info=sizes --info=totals --info=unused --info veneers --library_type=microlib --strict --summary_stderr --info summarysizes --xref --symbols --list NEON.map -o "NEON-RZ_A1H_MNIST.axf" $(OBJS) $(USER_OBJS) "C:/Users/ryutan01/Documents/DS-5 Workshop 1213/barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA9_L.lib"
+	armlink --cpu=Cortex-A9 --entry=__Vectors --scatter="../scatter.scat" --callgraph --map --info=sizes --info=totals --info=unused --info veneers --library_type=microlib --strict --summary_stderr --info summarysizes --xref --symbols --list NEON.map -o "NEON-RZ_A1H_MNIST.axf" $(OBJS) $(USER_OBJS) "C:/Users/ryutan01/Documents/DS-5 v0528 Workspace/barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA9_L.lib"
 	@echo 'Finished building target: $@'
 	@echo ' '
 

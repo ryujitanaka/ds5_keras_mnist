@@ -33,6 +33,80 @@ float relu(float value)
 	return value;
 }
 
+//	*inputs
+//	*outputs
+//	input_channel
+//  intput_columns
+//	output_channel
+//  output_columns
+//	filter_rows
+//	filter_cols
+//	stride_row
+//	stride_col
+//	*weights,
+//	*biases,
+int convolution_filter(
+    float *inputs,
+    float *outputs,
+    unsigned int input_channel,
+    unsigned int intput_columns,
+    unsigned int output_channel,
+    unsigned int output_columns,
+    unsigned int filter_rows,
+	unsigned int filter_cols,
+    unsigned int stride_row,
+	unsigned int stride_col,
+	float *weights,
+    float *biases,
+	char  relu_activation
+) {
+	unsigned int out_ch;
+    unsigned int in_ch;
+    unsigned int current_filter_row;
+    unsigned int current_filter_col;
+    float current_weight;
+    float current_biase;
+    float current_input;
+    float current_result;
+    float kernel_result;
+    unsigned int kernel_output_addr;
+
+    for (current_filter_row = 0; current_filter_row < filter_rows; current_filter_row++) {
+        for (current_filter_col = 0; current_filter_col < filter_cols; current_filter_col++) {
+            for (in_ch = 0; in_ch < input_channel; in_ch++) {
+                current_input = ((float*)inputs)[  ((stride_row + current_filter_row) * intput_columns * input_channel)
+                                                 + ((stride_col + current_filter_col) * input_channel)
+                                                 + in_ch];
+                for (out_ch = 0; out_ch < output_channel; out_ch++) {
+                    current_weight = ((float*)weights)[  (current_filter_row * filter_cols * input_channel * output_channel)
+                                                       + (current_filter_col * input_channel * output_channel)
+                                                       + (in_ch              * output_channel)
+                                                       + out_ch];
+                    current_result = current_input * current_weight;
+                    ((float*)outputs)[  (stride_row * output_columns * output_channel)
+                                      + (stride_col * output_channel)
+                                      + out_ch]
+                    += current_result;
+                }
+
+            }
+        }
+    }
+
+    for (out_ch = 0; out_ch < output_channel; out_ch++) {
+        current_biase = ((float*)biases)[out_ch];
+        kernel_output_addr = (stride_row * output_columns * output_channel) + (stride_col * output_channel) + out_ch;
+        kernel_result = ((float*)outputs)[kernel_output_addr];
+        kernel_result += current_biase;
+        if (relu_activation) {
+        	kernel_result = relu(kernel_result);
+        }
+    	((float*)outputs)[kernel_output_addr] = kernel_result;
+    }
+
+    return 0;
+}
+
 //--- Convolution ---
 //
 // keras_lay[0]
@@ -58,87 +132,43 @@ int convolution(
 		float *weights,	// Weights array: weights[lay->filter_rows][lay->filter_columns][lay->input_channel][lay->output_channel]
 		float *biases	// Biases array: biases[lay->output_channnel]
 ) {
-	unsigned int out_ch;		// Index for output channel
-	unsigned int in_ch;			// Index for input channel
-	unsigned int stride_row;	// Index for row of stride
-	unsigned int stride_col;	// Index for column of stride
-	unsigned int filter_row;	// Index for row of filter
-	unsigned int filter_col;	// Index for column of filter
-	float current_weight;		// Current weight value
-	float current_biase;		// Current bias value
-	float current_input;		// Current input value
-	float current_result;		// Current result
-	float kernel_result;		// Current result for kernel
+    unsigned int out_ch;
+    unsigned int stride_row;
+    unsigned int stride_col;
 
-	// Initialize output array
-	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// Loop for stride row
-		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// Loop for stride column
-			for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// Loop for output channel
-				((float*)outputs)[((stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
-												+(stride_col * lay->output_channel)			// [ ][x][ ]
-												+ out_ch)]                       			// [ ][ ][x]
-				= 0.0f;
-			}
-		}
-	}
+    for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {
+        for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {
+            for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {
+                ((float*)outputs)[((stride_row * lay->output_columns * lay->output_channel)
+                                                +(stride_col * lay->output_channel)
+                                                + out_ch)]
+                = 0.0f;
+            }
+        }
+    }
 
-	// Calculate weights
-	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// Loop for stride row
-		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// Loop for stride column
-			for (filter_row = 0; filter_row < lay->filter_rows; filter_row++) {	// Loop for filter row
-				for (filter_col = 0; filter_col < lay->filter_columns; filter_col++) {	// Loop for filter column
-					for (in_ch = 0; in_ch < lay->input_channel; in_ch++) {	// Loop for input channnel
-						// Get current input value
-						current_input = ((float*)inputs)[  ((stride_row + filter_row) * lay->input_columns * lay->input_channel)	// [x][ ][ ]
-														 + ((stride_col + filter_col)                      * lay->input_channel)	// [ ][x][ ]
-														 + in_ch];																	// [ ][ ][x]
-						for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// Loop for output channel
-							// Get current weight value
-							current_weight = ((float*)weights)[  (filter_row * lay->filter_columns * lay->input_channel * lay->output_channel)	// [x][ ][ ][ ]
-															   + (filter_col                       * lay->input_channel * lay->output_channel)	// [ ][x][ ][ ]
-															   + (in_ch                                                 * lay->output_channel)	// [ ][ ][x][ ]
-															   + out_ch];																		// [ ][ ][ ][x]
-							// Input * weight
-							current_result = current_input * current_weight;
-							// Add to outputs
-							((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
-									          + (stride_col                       * lay->output_channel)	// [ ][x][ ]
-											  + out_ch]                       								// [ ][ ][x]
-							+= current_result;
-						}
-					}
+    for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {
+        for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {
 
-				}
-			}
-		}
-	}
+        	convolution_filter(
+    			(float*)inputs,
+    			(float*)outputs,
+				lay->input_channel,
+				lay->input_columns,
+				lay->output_channel,
+				lay->output_columns,
+        		lay->filter_rows,
+				lay->filter_columns,
+				stride_row,
+				stride_col,
+				(float*)weights,
+				(float*)biases,
+				lay->relu_activation
+        	);
+        }
+    }
 
-	// Add biases
-	for (stride_row = 0; stride_row < lay->output_rows; stride_row++) {	// Loop for stride row
-		for (stride_col = 0; stride_col < lay->output_columns; stride_col++) {	// Loop for stride column
-			for (out_ch = 0; out_ch < lay->output_channel; out_ch++) {	// Loop for output channel
-				// Get current bias value
-				current_biase = ((float*)biases)[out_ch];
-				// Add current bias value to output
-				((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
-						          + (stride_col                       * lay->output_channel)	// [ ][x][ ]
-								  + out_ch]                       								// [ ][ ][x]
-				+= current_biase;
-				// Activation function
-				if (lay->relu_activation == 1) {
-					kernel_result = ((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
-													  + (stride_col                       * lay->output_channel)	// [ ][x][ ]
-													  + out_ch];                       								// [ ][ ][x]
-					((float*)outputs)[  (stride_row * lay->output_columns * lay->output_channel)	// [x][ ][ ]
-							          + (stride_col                       * lay->output_channel)	// [ ][x][ ]
-									  + out_ch]                       								// [ ][ ][x]
-					= relu(kernel_result);
-				}
-			}
-		}
-	}
-
-	return 0;
+    return 0;
 }
 
 //--- Max pooling ---

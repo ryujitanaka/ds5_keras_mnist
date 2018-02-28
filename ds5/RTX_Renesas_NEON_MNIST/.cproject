@@ -32,9 +32,7 @@
 								<option id="com.arm.tool.c.compiler.option.targetcpu.2014543524" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
 								<option id="com.arm.tool.c.compiler.option.inst.1157070884" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
 								<option id="com.arm.tool.c.compiler.option.inter.1532751184" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.compiler.option.flags.1670953782" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" useByScannerDiscovery="true" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
+								<option id="com.arm.tool.c.compiler.option.flags.1670953782" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" useByScannerDiscovery="true"/>
 								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.c.compiler.baremetal.exe.debug.base.option.opt.105073227" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.exe.debug.base.option.opt" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.optlevel.high" valueType="enumerated"/>
 								<option id="com.arm.tool.c.compiler.option.vector.1210610263" name="Vectorization (--vectorize)" superClass="com.arm.tool.c.compiler.option.vector" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="com.arm.tool.c.compiler.option.optfor.627720076" name="Optimize for" superClass="com.arm.tool.c.compiler.option.optfor" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.optfor.time" valueType="enumerated"/>
@@ -57,26 +55,26 @@
 								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.cpp.compiler.baremetal.exe.debug.base.option.opt.339686311" name="Optimization level" superClass="com.arm.tool.cpp.compiler.baremetal.exe.debug.base.option.opt" valueType="enumerated"/>
 							</tool>
 							<tool id="com.arm.tool.assembler.1547948946" name="ARM Assembler 5" superClass="com.arm.tool.assembler">
-								<option id="com.arm.tool.assembler.option.inter.1843422917" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.assembler.option.inter" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.assembler.option.cpu.1381019298" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" value="Cortex-A9" valueType="string"/>
-								<option id="com.arm.tool.assembler.option.endian.378949242" name="Byte order" superClass="com.arm.tool.assembler.option.endian" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
-								<option id="com.arm.tool.assembler.option.flags.491368613" name="Other flags" superClass="com.arm.tool.assembler.option.flags" valueType="stringList">
+								<option id="com.arm.tool.assembler.option.inter.1843422917" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.assembler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.assembler.option.cpu.1381019298" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
+								<option id="com.arm.tool.assembler.option.endian.378949242" name="Byte order" superClass="com.arm.tool.assembler.option.endian" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.tool.assembler.option.flags.491368613" name="Other flags" superClass="com.arm.tool.assembler.option.flags" useByScannerDiscovery="true" valueType="stringList">
 									<listOptionValue builtIn="false" value="--pd &quot;__MICROLIB SETA 1&quot; --pd &quot;__FPU_PRESENT SETA 1&quot;"/>
 								</option>
-								<option id="com.arm.tool.assembler.option.sup.419878487" name="Suppress (--diag_suppress)" superClass="com.arm.tool.assembler.option.sup" value="1786" valueType="string"/>
+								<option id="com.arm.tool.assembler.option.sup.419878487" name="Suppress (--diag_suppress)" superClass="com.arm.tool.assembler.option.sup" useByScannerDiscovery="false" value="1786" valueType="string"/>
 								<inputType id="com.arm.tool.assembler.input.1721535205" superClass="com.arm.tool.assembler.input"/>
 							</tool>
 							<tool id="com.arm.tool.c.linker.1893120245" name="ARM Linker 5" superClass="com.arm.tool.c.linker">
-								<option id="com.arm.tool.c.linker.option.entry.418173892" name="Image entry point (--entry)" superClass="com.arm.tool.c.linker.option.entry" value="__Vectors" valueType="string"/>
-								<option id="com.arm.tool.c.linker.option.cpu.543258368" name="Target CPU (--cpu)" superClass="com.arm.tool.c.linker.option.cpu" value="Cortex-A9" valueType="string"/>
-								<option id="com.arm.tool.c.linker.option.scatter.1730814972" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="../scatter.scat" valueType="string"/>
-								<option id="com.arm.tool.c.linker.userobjs.124563740" name="Other object files" superClass="com.arm.tool.c.linker.userobjs"/>
-								<option id="com.arm.tool.c.linker.option.eleminate.1004539485" name="Eliminate unused sections (--remove)" superClass="com.arm.tool.c.linker.option.eleminate" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.callgraph.1731081130" name="Generate call graph (--callgraph)" superClass="com.arm.tool.c.linker.option.callgraph" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.imagemap.1696279848" name="Generate image map (--map)" superClass="com.arm.tool.c.linker.option.imagemap" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.totals.682465421" name="List total code and data sizes of output image (--info=totals)" superClass="com.arm.tool.c.linker.option.totals" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.elim.1633451295" name="List unused sections that are eliminated (--info=unused)" superClass="com.arm.tool.c.linker.option.elim" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.flags.2986525" name="Other flags" superClass="com.arm.tool.c.linker.option.flags" valueType="stringList">
+								<option id="com.arm.tool.c.linker.option.entry.418173892" name="Image entry point (--entry)" superClass="com.arm.tool.c.linker.option.entry" useByScannerDiscovery="false" value="__Vectors" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.cpu.543258368" name="Target CPU (--cpu)" superClass="com.arm.tool.c.linker.option.cpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.scatter.1730814972" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" useByScannerDiscovery="false" value="../scatter.scat" valueType="string"/>
+								<option id="com.arm.tool.c.linker.userobjs.124563740" name="Other object files" superClass="com.arm.tool.c.linker.userobjs" useByScannerDiscovery="false"/>
+								<option id="com.arm.tool.c.linker.option.eleminate.1004539485" name="Eliminate unused sections (--remove)" superClass="com.arm.tool.c.linker.option.eleminate" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.callgraph.1731081130" name="Generate call graph (--callgraph)" superClass="com.arm.tool.c.linker.option.callgraph" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.imagemap.1696279848" name="Generate image map (--map)" superClass="com.arm.tool.c.linker.option.imagemap" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.totals.682465421" name="List total code and data sizes of output image (--info=totals)" superClass="com.arm.tool.c.linker.option.totals" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.elim.1633451295" name="List unused sections that are eliminated (--info=unused)" superClass="com.arm.tool.c.linker.option.elim" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.flags.2986525" name="Other flags" superClass="com.arm.tool.c.linker.option.flags" useByScannerDiscovery="true" valueType="stringList">
 									<listOptionValue builtIn="false" value="--info veneers --library_type=microlib --strict --summary_stderr --info summarysizes --xref --symbols --list NEON.map"/>
 								</option>
 								<option id="com.arm.tool.c.linker.libs.400661891" name="User library files" superClass="com.arm.tool.c.linker.libs" useByScannerDiscovery="false" valueType="libs">
@@ -95,8 +93,8 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
-		<cconfiguration id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556" moduleId="org.eclipse.cdt.core.settings" name="NEON">
+		<cconfiguration id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556.1355371413">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556.1355371413" moduleId="org.eclipse.cdt.core.settings" name="NEON">
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -105,17 +103,17 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="axf" artifactName="NEON-RZ_A1H_MNIST" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="clean" description="Optimized for NEON" id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556" name="NEON" parent="com.arm.eclipse.build.config.baremetal.exe.debug">
-					<folderInfo id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556." name="/" resourcePath="">
-						<toolChain id="com.arm.toolchain.baremetal.exe.debug.1288891028" name="ARM Compiler 5" superClass="com.arm.toolchain.baremetal.exe.debug">
-							<targetPlatform id="com.arm.toolchain.baremetal.exe.debug.1288891028.427594931" name=""/>
-							<builder buildPath="${workspace_loc:/NEON/Debug}" id="com.arm.toolchain.baremetal.builder.99205249" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.toolchain.baremetal.builder"/>
-							<tool command="armcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.arm.tool.c.compiler.baremetal.exe.debug.1687092308" name="ARM C Compiler 5" superClass="com.arm.tool.c.compiler.baremetal.exe.debug">
-								<option id="com.arm.tool.c.compiler.option.defmac.303143889" name="Define macro (-D)" superClass="com.arm.tool.c.compiler.option.defmac" useByScannerDiscovery="false" valueType="definedSymbols">
+				<configuration artifactExtension="axf" artifactName="NEON-RZ_A1H_MNIST" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="clean" description="NEON optimized" id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556.1355371413" name="NEON" parent="com.arm.eclipse.build.config.baremetal.exe.debug">
+					<folderInfo id="com.arm.eclipse.build.config.baremetal.exe.debug.2022007052.1854947556.1355371413." name="/" resourcePath="">
+						<toolChain id="com.arm.toolchain.baremetal.exe.debug.769890478" name="ARM Compiler 5" superClass="com.arm.toolchain.baremetal.exe.debug">
+							<targetPlatform id="com.arm.toolchain.baremetal.exe.debug.769890478.17617936" name=""/>
+							<builder buildPath="${workspace_loc:/NEON/Debug}" id="com.arm.toolchain.baremetal.builder.961275738" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.arm.toolchain.baremetal.builder"/>
+							<tool command="armcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="com.arm.tool.c.compiler.baremetal.exe.debug.1409191596" name="ARM C Compiler 5" superClass="com.arm.tool.c.compiler.baremetal.exe.debug">
+								<option id="com.arm.tool.c.compiler.option.defmac.2038952684" name="Define macro (-D)" superClass="com.arm.tool.c.compiler.option.defmac" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__MICROLIB"/>
 									<listOptionValue builtIn="false" value="__FPU_PRESENT"/>
 								</option>
-								<option id="com.arm.tool.c.compiler.option.incpath.668623248" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" useByScannerDiscovery="false" valueType="includePath">
+								<option id="com.arm.tool.c.compiler.option.incpath.933133456" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/SRC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/INC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/Include}&quot;"/>
@@ -123,24 +121,23 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/barman-CMSIS_RTOS_RTX/RTOS/RTX/Boards/Renesas/RZ_A1H_GENMAI/INC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}&quot;"/>
 								</option>
-								<option id="com.arm.tool.c.compiler.option.targetcpu.1506097321" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
-								<option id="com.arm.tool.c.compiler.option.inst.520668514" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
-								<option id="com.arm.tool.c.compiler.option.inter.1358166438" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.compiler.option.flags.711805170" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" useByScannerDiscovery="true" valueType="stringList">
-									<listOptionValue builtIn="false" value=""/>
-								</option>
-								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.c.compiler.baremetal.exe.debug.base.option.opt.1589652906" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.exe.debug.base.option.opt" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.optlevel.high" valueType="enumerated"/>
-								<option id="com.arm.tool.c.compiler.option.vector.219565587" name="Vectorization (--vectorize)" superClass="com.arm.tool.c.compiler.option.vector" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.compiler.option.optfor.571596939" name="Optimize for" superClass="com.arm.tool.c.compiler.option.optfor" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.optfor.time" valueType="enumerated"/>
-								<option id="com.arm.tool.c.compiler.option.loopopt.749062353" name="Loop Optimization (--loop_optimization_level)" superClass="com.arm.tool.c.compiler.option.loopopt" useByScannerDiscovery="false" value="com.arm.tool.c.compiler.option.loopopt.default" valueType="enumerated"/>
-								<option id="com.arm.tool.c.compiler.option.warnsev.857971676" name="Warning severity (--diag_warning)" superClass="com.arm.tool.c.compiler.option.warnsev" useByScannerDiscovery="false" value="optimizations" valueType="string"/>
-								<option id="com.arm.tool.c.compiler.option.target.enableToolSpecificSettings.1752325161" name="Enable tool specific settings" superClass="com.arm.tool.c.compiler.option.target.enableToolSpecificSettings" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.compiler.option.gnu.378352928" name="Enable GNU extensions (--gnu)" superClass="com.arm.tool.c.compiler.option.gnu" useByScannerDiscovery="true" value="true" valueType="boolean"/>
-								<inputType id="com.arm.tool.c.compiler.input.844160206" superClass="com.arm.tool.c.compiler.input"/>
-								<inputType id="com.arm.tool.cpp.compiler.input.785961159" superClass="com.arm.tool.cpp.compiler.input"/>
+								<option id="com.arm.tool.c.compiler.option.targetcpu.1619239615" name="Target CPU (--cpu)" superClass="com.arm.tool.c.compiler.option.targetcpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
+								<option id="com.arm.tool.c.compiler.option.inst.248750079" name="Instruction set" superClass="com.arm.tool.c.compiler.option.inst" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.inst.thumb" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.inter.431041823" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.c.compiler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.flags.1946313736" name="Other flags" superClass="com.arm.tool.c.compiler.option.flags" useByScannerDiscovery="true"/>
+								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.c.compiler.baremetal.exe.debug.base.option.opt.1934845632" name="Optimization level" superClass="com.arm.tool.c.compiler.baremetal.exe.debug.base.option.opt" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.optlevel.high" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.vector.299468757" name="Vectorization (--vectorize)" superClass="com.arm.tool.c.compiler.option.vector" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.optfor.407498818" name="Optimize for" superClass="com.arm.tool.c.compiler.option.optfor" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.optfor.time" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.loopopt.850297485" name="Loop Optimization (--loop_optimization_level)" superClass="com.arm.tool.c.compiler.option.loopopt" useByScannerDiscovery="false" value="com.arm.tool.c.compiler.option.loopopt.default" valueType="enumerated"/>
+								<option id="com.arm.tool.c.compiler.option.warnsev.994099299" name="Warning severity (--diag_warning)" superClass="com.arm.tool.c.compiler.option.warnsev" useByScannerDiscovery="false" value="optimizations" valueType="string"/>
+								<option id="com.arm.tool.c.compiler.option.target.enableToolSpecificSettings.1421500379" name="Enable tool specific settings" superClass="com.arm.tool.c.compiler.option.target.enableToolSpecificSettings" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.gnu.1322054000" name="Enable GNU extensions (--gnu)" superClass="com.arm.tool.c.compiler.option.gnu" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.compiler.option.debug.enableToolSpecificSettings.1727002324" name="Enable tool specific settings" superClass="com.arm.tool.c.compiler.option.debug.enableToolSpecificSettings" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.arm.tool.c.compiler.input.1294855628" superClass="com.arm.tool.c.compiler.input"/>
+								<inputType id="com.arm.tool.cpp.compiler.input.635260235" superClass="com.arm.tool.cpp.compiler.input"/>
 							</tool>
-							<tool id="com.arm.tool.cpp.compiler.baremetal.exe.debug.1156719062" name="ARM C++ Compiler 5" superClass="com.arm.tool.cpp.compiler.baremetal.exe.debug">
-								<option id="com.arm.tool.c.compiler.option.incpath.325727548" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" valueType="includePath">
+							<tool id="com.arm.tool.cpp.compiler.baremetal.exe.debug.465864542" name="ARM C++ Compiler 5" superClass="com.arm.tool.cpp.compiler.baremetal.exe.debug">
+								<option id="com.arm.tool.c.compiler.option.incpath.1381811293" name="Include path (-I)" superClass="com.arm.tool.c.compiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CMSIS_RTOS_RTX/RTOS/RTX/SRC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CMSIS_RTOS_RTX/RTOS/RTX/INC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CMSIS_RTOS_RTX/Include}&quot;"/>
@@ -148,41 +145,41 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CMSIS_RTOS_RTX/RTOS/RTX/Boards/Renesas/RZ_A1H_GENMAI/INC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}&quot;"/>
 								</option>
-								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.cpp.compiler.baremetal.exe.debug.base.option.opt.2037857381" name="Optimization level" superClass="com.arm.tool.cpp.compiler.baremetal.exe.debug.base.option.opt" valueType="enumerated"/>
+								<option defaultValue="com.arm.tool.c.compiler.option.optlevel.min" id="com.arm.tool.cpp.compiler.baremetal.exe.debug.base.option.opt.1589800665" name="Optimization level" superClass="com.arm.tool.cpp.compiler.baremetal.exe.debug.base.option.opt" valueType="enumerated"/>
 							</tool>
-							<tool id="com.arm.tool.assembler.1534898634" name="ARM Assembler 5" superClass="com.arm.tool.assembler">
-								<option id="com.arm.tool.assembler.option.inter.133609522" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.assembler.option.inter" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.assembler.option.cpu.980896690" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" value="Cortex-A9" valueType="string"/>
-								<option id="com.arm.tool.assembler.option.endian.1416285609" name="Byte order" superClass="com.arm.tool.assembler.option.endian" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
-								<option id="com.arm.tool.assembler.option.flags.1781837504" name="Other flags" superClass="com.arm.tool.assembler.option.flags" valueType="stringList">
+							<tool id="com.arm.tool.assembler.856141976" name="ARM Assembler 5" superClass="com.arm.tool.assembler">
+								<option id="com.arm.tool.assembler.option.inter.2115477480" name="Interworking (--apcs=/interwork)" superClass="com.arm.tool.assembler.option.inter" useByScannerDiscovery="true" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.assembler.option.cpu.1310282715" name="Target CPU (--cpu)" superClass="com.arm.tool.assembler.option.cpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
+								<option id="com.arm.tool.assembler.option.endian.1910584376" name="Byte order" superClass="com.arm.tool.assembler.option.endian" useByScannerDiscovery="true" value="com.arm.tool.c.compiler.option.endian.little" valueType="enumerated"/>
+								<option id="com.arm.tool.assembler.option.flags.2138369859" name="Other flags" superClass="com.arm.tool.assembler.option.flags" useByScannerDiscovery="true" valueType="stringList">
 									<listOptionValue builtIn="false" value="--pd &quot;__MICROLIB SETA 1&quot; --pd &quot;__FPU_PRESENT SETA 1&quot;"/>
 								</option>
-								<option id="com.arm.tool.assembler.option.sup.451023669" name="Suppress (--diag_suppress)" superClass="com.arm.tool.assembler.option.sup" value="1786" valueType="string"/>
-								<inputType id="com.arm.tool.assembler.input.2025950191" superClass="com.arm.tool.assembler.input"/>
+								<option id="com.arm.tool.assembler.option.sup.1007553822" name="Suppress (--diag_suppress)" superClass="com.arm.tool.assembler.option.sup" useByScannerDiscovery="false" value="1786" valueType="string"/>
+								<inputType id="com.arm.tool.assembler.input.1688677716" superClass="com.arm.tool.assembler.input"/>
 							</tool>
-							<tool id="com.arm.tool.c.linker.1760091263" name="ARM Linker 5" superClass="com.arm.tool.c.linker">
-								<option id="com.arm.tool.c.linker.option.entry.458879032" name="Image entry point (--entry)" superClass="com.arm.tool.c.linker.option.entry" value="__Vectors" valueType="string"/>
-								<option id="com.arm.tool.c.linker.option.cpu.1897027064" name="Target CPU (--cpu)" superClass="com.arm.tool.c.linker.option.cpu" value="Cortex-A9" valueType="string"/>
-								<option id="com.arm.tool.c.linker.option.scatter.1686701575" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" value="../scatter.scat" valueType="string"/>
-								<option id="com.arm.tool.c.linker.userobjs.1188823728" name="Other object files" superClass="com.arm.tool.c.linker.userobjs"/>
-								<option id="com.arm.tool.c.linker.option.eleminate.1991392984" name="Eliminate unused sections (--remove)" superClass="com.arm.tool.c.linker.option.eleminate" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.callgraph.756657260" name="Generate call graph (--callgraph)" superClass="com.arm.tool.c.linker.option.callgraph" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.imagemap.1327922212" name="Generate image map (--map)" superClass="com.arm.tool.c.linker.option.imagemap" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.totals.1006078933" name="List total code and data sizes of output image (--info=totals)" superClass="com.arm.tool.c.linker.option.totals" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.elim.1124981263" name="List unused sections that are eliminated (--info=unused)" superClass="com.arm.tool.c.linker.option.elim" value="true" valueType="boolean"/>
-								<option id="com.arm.tool.c.linker.option.flags.744006671" name="Other flags" superClass="com.arm.tool.c.linker.option.flags" valueType="stringList">
+							<tool id="com.arm.tool.c.linker.1731025911" name="ARM Linker 5" superClass="com.arm.tool.c.linker">
+								<option id="com.arm.tool.c.linker.option.entry.270688991" name="Image entry point (--entry)" superClass="com.arm.tool.c.linker.option.entry" useByScannerDiscovery="false" value="__Vectors" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.cpu.1705107656" name="Target CPU (--cpu)" superClass="com.arm.tool.c.linker.option.cpu" useByScannerDiscovery="true" value="Cortex-A9" valueType="string"/>
+								<option id="com.arm.tool.c.linker.option.scatter.250123931" name="Scatter file (--scatter)" superClass="com.arm.tool.c.linker.option.scatter" useByScannerDiscovery="false" value="../scatter.scat" valueType="string"/>
+								<option id="com.arm.tool.c.linker.userobjs.815279024" name="Other object files" superClass="com.arm.tool.c.linker.userobjs" useByScannerDiscovery="false"/>
+								<option id="com.arm.tool.c.linker.option.eleminate.281977662" name="Eliminate unused sections (--remove)" superClass="com.arm.tool.c.linker.option.eleminate" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.callgraph.552530596" name="Generate call graph (--callgraph)" superClass="com.arm.tool.c.linker.option.callgraph" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.imagemap.646661353" name="Generate image map (--map)" superClass="com.arm.tool.c.linker.option.imagemap" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.totals.1325280656" name="List total code and data sizes of output image (--info=totals)" superClass="com.arm.tool.c.linker.option.totals" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.elim.1382147345" name="List unused sections that are eliminated (--info=unused)" superClass="com.arm.tool.c.linker.option.elim" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.arm.tool.c.linker.option.flags.1499557591" name="Other flags" superClass="com.arm.tool.c.linker.option.flags" useByScannerDiscovery="true" valueType="stringList">
 									<listOptionValue builtIn="false" value="--info veneers --library_type=microlib --strict --summary_stderr --info summarysizes --xref --symbols --list NEON.map"/>
 								</option>
-								<option id="com.arm.tool.c.linker.libs.1670644696" name="User library files" superClass="com.arm.tool.c.linker.libs" useByScannerDiscovery="false" valueType="libs">
+								<option id="com.arm.tool.c.linker.libs.1361361219" name="User library files" superClass="com.arm.tool.c.linker.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc}/barman-CMSIS_RTOS_RTX/RTOS/RTX/LIB/ARM/RTX_CA9_L.lib&quot;"/>
 								</option>
-								<option id="com.arm.tool.c.linker.option.libs.enableToolSpecificSettings.198909107" name="Enable tool specific settings" superClass="com.arm.tool.c.linker.option.libs.enableToolSpecificSettings" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<inputType id="com.arm.tool.c.linker.input.1825817396" superClass="com.arm.tool.c.linker.input">
+								<option id="com.arm.tool.c.linker.option.libs.enableToolSpecificSettings.164028495" name="Enable tool specific settings" superClass="com.arm.tool.c.linker.option.libs.enableToolSpecificSettings" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="com.arm.tool.c.linker.input.771804884" superClass="com.arm.tool.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinputdependency" paths="$(LIBS)"/>
 								</inputType>
 							</tool>
-							<tool id="com.arm.tool.librarian.169889631" name="ARM Librarian 5" superClass="com.arm.tool.librarian"/>
+							<tool id="com.arm.tool.librarian.855716272" name="ARM Librarian 5" superClass="com.arm.tool.librarian"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>
@@ -200,6 +197,7 @@
 		<configuration configurationName="NEON">
 			<resource resourceType="PROJECT" workspacePath="/RTX_Renesas_NEON_MNIST"/>
 		</configuration>
+		<configuration configurationName="NEON2"/>
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/RTX_Renesas_NEON_MNIST"/>
 		</configuration>

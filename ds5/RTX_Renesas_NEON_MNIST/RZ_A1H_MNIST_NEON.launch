@@ -5,9 +5,9 @@
 <stringAttribute key="ANDROID_APP_DIR" value=""/>
 <stringAttribute key="ANDROID_PROCESS_NAME" value=""/>
 <mapAttribute key="AverageDurationTracker">
-<mapEntry key="*Fetching Data" value="15574628"/>
-<mapEntry key="*Fetching Data Model" value="413259"/>
-<mapEntry key="*list global low level symbols" value="490285"/>
+<mapEntry key="*Fetching Data" value="57794083"/>
+<mapEntry key="*Fetching Data Model" value="175289"/>
+<mapEntry key="*list global low level symbols" value="318589"/>
 <mapEntry key="*loading memory from target" value="11682223"/>
 <mapEntry key="*loading values from target" value="8395388"/>
 <mapEntry key="*read memory" value="126221516"/>
@@ -16,55 +16,55 @@
 <mapEntry key="*updating registers" value="199597056"/>
 <mapEntry key="*updating threads" value="7581349"/>
 <mapEntry key="*updating variables" value="818491"/>
-<mapEntry key="AddEventObserver" value="7030339"/>
+<mapEntry key="AddEventObserver" value="3859486"/>
 <mapEntry key="ConsoleCommand" value="863543"/>
-<mapEntry key="Evaluate" value="5775336"/>
+<mapEntry key="Evaluate" value="2305555"/>
 <mapEntry key="ListRegimeWarningsCommand" value="122225"/>
 <mapEntry key="areCachesAvailable" value="181826"/>
-<mapEntry key="break" value="11608432"/>
+<mapEntry key="break" value="12504397"/>
 <mapEntry key="checking tracepoints" value="15652"/>
-<mapEntry key="compute execution mode" value="208384"/>
-<mapEntry key="console" value="12650920366"/>
-<mapEntry key="continue" value="42427428"/>
+<mapEntry key="compute execution mode" value="2230777"/>
+<mapEntry key="console" value="12971700627"/>
+<mapEntry key="continue" value="14148723"/>
 <mapEntry key="disassemble" value="35358436"/>
 <mapEntry key="evaluate address" value="570565"/>
 <mapEntry key="finish" value="25072771"/>
 <mapEntry key="get byte order" value="188474"/>
-<mapEntry key="get capabilities" value="88341"/>
-<mapEntry key="get cwd" value="267452"/>
-<mapEntry key="get execution addresss" value="734451"/>
-<mapEntry key="get source lines" value="634940"/>
+<mapEntry key="get capabilities" value="111122"/>
+<mapEntry key="get cwd" value="187414"/>
+<mapEntry key="get execution addresss" value="674470"/>
+<mapEntry key="get source lines" value="492247"/>
 <mapEntry key="getValidEncodings" value="411766"/>
-<mapEntry key="initialize command help" value="33609007"/>
-<mapEntry key="interrupt" value="2748686"/>
-<mapEntry key="list breakpoint options" value="96001"/>
-<mapEntry key="list breakpoints" value="684106"/>
-<mapEntry key="list instruction sets" value="342873"/>
-<mapEntry key="list signals" value="10515424"/>
+<mapEntry key="initialize command help" value="34416261"/>
+<mapEntry key="interrupt" value="5772476"/>
+<mapEntry key="list breakpoint options" value="163078"/>
+<mapEntry key="list breakpoints" value="376311"/>
+<mapEntry key="list instruction sets" value="143400"/>
+<mapEntry key="list signals" value="10354589"/>
 <mapEntry key="list translations" value="215106"/>
-<mapEntry key="list watchpoint options" value="147544"/>
-<mapEntry key="list watchpoints" value="284093"/>
-<mapEntry key="loadfile" value="246726287"/>
+<mapEntry key="list watchpoint options" value="420818"/>
+<mapEntry key="list watchpoints" value="609390"/>
+<mapEntry key="loadfile" value="260562726"/>
 <mapEntry key="next" value="33105292"/>
 <mapEntry key="read memory map" value="20699468"/>
 <mapEntry key="remove" value="22123009"/>
-<mapEntry key="run script" value="1456361385"/>
-<mapEntry key="set CWD" value="1387650"/>
-<mapEntry key="set breakpoint properties" value="21005793"/>
-<mapEntry key="set debug-from" value="2141992"/>
-<mapEntry key="source barman_dump.py" value="13739558262"/>
+<mapEntry key="run script" value="1180238974"/>
+<mapEntry key="set CWD" value="2470852"/>
+<mapEntry key="set breakpoint properties" value="18529806"/>
+<mapEntry key="set debug-from" value="434879"/>
+<mapEntry key="source barman_dump.py" value="13883281841"/>
 <mapEntry key="source cnn_import.py" value="155383826077"/>
 <mapEntry key="source image_import.py" value="36636407415"/>
-<mapEntry key="start" value="42563944"/>
+<mapEntry key="start" value="38404103"/>
 <mapEntry key="step" value="29837502"/>
 <mapEntry key="stepi" value="13943250"/>
-<mapEntry key="synchronizing trace ranges" value="46536"/>
+<mapEntry key="synchronizing trace ranges" value="53489"/>
 <mapEntry key="target reset" value="1288358861"/>
 <mapEntry key="thread" value="5678559"/>
-<mapEntry key="toggleBreakpoint" value="24502306"/>
+<mapEntry key="toggleBreakpoint" value="21095921"/>
 <mapEntry key="updateBreakpointLocation" value="1332149"/>
 <mapEntry key="updating MMU tables" value="157586"/>
-<mapEntry key="waitForTargetToStop" value="170138655"/>
+<mapEntry key="waitForTargetToStop" value="171439504"/>
 <mapEntry key="write memory" value="124303704"/>
 <mapEntry key="グローバルリストの取得" value="7291987"/>
 </mapAttribute>
@@ -82,37 +82,37 @@
 <stringAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.0.VALUE" value=""/>
 <intAttribute key="FILES.DEBUG_RESIDENT_ANDROID.RESOURCES.COUNT" value="1"/>
 <listAttribute key="FILES.DEBUG_RESIDENT_APP"/>
-<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.TYPE" value="APPLICATION_ON_TARGET"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
 <stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.0.VALUE" value=""/>
-<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.TYPE" value="APPLICATION_ON_TARGET"/>
 <stringAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.1.VALUE" value=""/>
 <intAttribute key="FILES.DEBUG_RESIDENT_APP.RESOURCES.COUNT" value="2"/>
 <listAttribute key="FILES.DOWNLOAD_AND_DEBUG"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
-<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.0.VALUE" value=""/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.OPTION.ON_DEMAND_LOAD" value="true"/>
-<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.TYPE" value="TARGET_DOWNLOAD_DIR"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.1.VALUE" value=""/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.OPTION.ON_DEMAND_LOAD" value="true"/>
-<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.TYPE" value="TARGET_DOWNLOAD_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.TYPE" value="TARGET_WORKING_DIR"/>
 <stringAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.2.VALUE" value=""/>
 <intAttribute key="FILES.DOWNLOAD_AND_DEBUG.RESOURCES.COUNT" value="3"/>
 <listAttribute key="FILES.DOWNLOAD_DEBUG"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.OPTION.ON_DEMAND_LOAD" value="true"/>
-<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.TYPE" value="TARGET_WORKING_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.0.VALUE" value=""/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.OPTION.ON_DEMAND_LOAD" value="true"/>
-<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.TYPE" value="APP_ON_HOST_TO_DOWNLOAD"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.TYPE" value="TARGET_DOWNLOAD_DIR"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.1.VALUE" value=""/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.OPTION.ALSO_LOAD_SYMBOLS" value="true"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.OPTION.ON_DEMAND_LOAD" value="true"/>
-<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.TYPE" value="TARGET_DOWNLOAD_DIR"/>
+<stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.TYPE" value="TARGET_WORKING_DIR"/>
 <stringAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.2.VALUE" value=""/>
 <intAttribute key="FILES.DOWNLOAD_DEBUG.RESOURCES.COUNT" value="3"/>
 <intAttribute key="FILES.DOWNLOAD_DEBUG_ANDROID.RESOURCES.COUNT" value="0"/>
@@ -163,22 +163,16 @@
 <booleanAttribute key="VFS_ENABLED" value="true"/>
 <stringAttribute key="VFS_LOCAL_DIR" value="${workspace_loc}"/>
 <stringAttribute key="VFS_REMOTE_MOUNT" value="/writeable"/>
-<stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;54&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;54&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x20020CF6&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;113&quot; function=&quot;main&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x20020CF6&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;113&quot; function=&quot;main&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;130&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x20020D76&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;130&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
+<stringAttribute key="breakpoints" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;breakpoints&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;54&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;54&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;48&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop NEON/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop NEON\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;56&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;113&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;113&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;130&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;130&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&#9;&lt;breakpoint ignorecount=&quot;0&quot; threadenabled=&quot;no&quot; core_list=&quot;&quot; continue=&quot;no&quot; verboseBreakpoints=&quot;yes&quot; kind=&quot;SOURCEPOSITION&quot;&gt;&#10;&#9;&#9;&lt;master_location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x20020D76&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 v0528 Workspace/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;130&quot; function=&quot;main&quot;/&gt;&#10;&#9;&#9;&lt;location index=&quot;0&quot; enabled=&quot;true&quot; version=&quot;2&quot; address=&quot;S:0x20020D76&quot; debugFile=&quot;C:/Users/ryutan01/Documents/DS-5 v0528 Workspace/RTX_Renesas_NEON_MNIST/NEON.c&quot; hostFile=&quot;C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\RTX_Renesas_NEON_MNIST\NEON.c&quot; line=&quot;130&quot; function=&quot;main&quot;/&gt;&#10;&#9;&lt;/breakpoint&gt;&#10;&lt;/breakpoints&gt;&#10;"/>
 <listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.addresses">
 <listEntry value="&lt;Next Instruction&gt;"/>
 <listEntry value=""/>
 <listEntry value="&lt;次の命令&gt;"/>
-<listEntry value="convert"/>
-<listEntry value="convolution"/>
-<listEntry value="convolution"/>
 </listAttribute>
 <listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.DisassemblyView.ranges">
 <listEntry value="100"/>
 <listEntry value=""/>
 <listEntry value="100"/>
-<listEntry value="100"/>
-<listEntry value="100"/>
-<listEntry value="1000"/>
 </listAttribute>
 <listAttribute key="com.arm.debug.views.common.AddressTracker.debugger.view.MemoryView.addresses">
 <listEntry value=""/>
@@ -204,7 +198,7 @@
 <listEntry value="1024"/>
 <listEntry value="1024"/>
 </listAttribute>
-<stringAttribute key="com.arm.debug.views.debugConsole.DebugCommandLine.History" value="dump binary memory &quot;RTX_Renesas_NEON_MNIST/scripts/ds5_params_after.bin;dump binary memory &quot;RTX_Renesas_NEON_MNIST/scripts/ds5_params_after.bin&quot; 0x20650000 0x2069E528;$idir;idir;print $idir;print $sdir;print $dir;print $pdir;print $adir;print $workspace;print $wdir;print $sourcedir;print $edir;print $bdir;print $cdir;print $ddir;print $edir;print $fdir;print $gdir;print $hdir;print $idir;print $jdir;print $kdir;print $ldir;print $mdir;print $ndir;print $odir;print $pdir;print $qdir;print $rdir;print $sdir;print $tdir;print $udir;print $vdir;print $wdir;print $xdir;print $ydir;print $zdir;print $pwd;dump memory &quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON\barman.raw&quot; 0x20500000 +0x300000;dump memory &quot;barman.raw&quot; 0x20500000 +0x300000;source &quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\Default\scripts\barman_dump.py&quot;"/>
+<stringAttribute key="com.arm.debug.views.debugConsole.DebugCommandLine.History" value="dump binary memory &quot;RTX_Renesas_NEON_MNIST/scripts/ds5_params_after.bin;dump binary memory &quot;RTX_Renesas_NEON_MNIST/scripts/ds5_params_after.bin&quot; 0x20650000 0x2069E528;$idir;idir;print $idir;print $sdir;print $dir;print $pdir;print $adir;print $workspace;print $wdir;print $sourcedir;print $edir;print $bdir;print $cdir;print $ddir;print $edir;print $fdir;print $gdir;print $hdir;print $idir;print $jdir;print $kdir;print $ldir;print $mdir;print $ndir;print $odir;print $pdir;print $qdir;print $rdir;print $sdir;print $tdir;print $udir;print $vdir;print $wdir;print $xdir;print $ydir;print $zdir;print $pwd;dump memory &quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\NEON\barman.raw&quot; 0x20500000 +0x300000;dump memory &quot;barman.raw&quot; 0x20500000 +0x300000;source &quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\Default\scripts\barman_dump.py&quot;;dump memory &quot;barman.raw&quot; 0x20500000 +0x300000;source &quot;C:\Users\ryutan01\Documents\DS-5 Workshop 1213\RTX_Renesas_NEON_MNIST\Default\scripts\barman_dump.py&quot;"/>
 <listAttribute key="com.arm.debugger.views.common.AddressTracker.debugger.view.DisassemblyView.addresses">
 <listEntry value="&lt;Next Instruction&gt;"/>
 </listAttribute>
@@ -226,7 +220,7 @@
 <stringAttribute key="config_db_taxonomy_id" value="/platform/renesas/r7s721001"/>
 <stringAttribute key="config_file" value="CDB://Renesas_R7S72100.rvc"/>
 <booleanAttribute key="connectOnly" value="false"/>
-<stringAttribute key="connection_type" value="ULINKpro"/>
+<stringAttribute key="connection_type" value="ULINKpro D"/>
 <stringAttribute key="debugger.view.DataView.os:DataView" value="rO0ABXNyACtjb20uYXJtLmRlYnVnLnZpZXdzLmRhdGEuRGF0YVZpZXdQcm9wZXJ0aWVzAAAAAAAAAAECAAB4cgAlY29tLmFybS5kZWJ1Zy52aWV3cy5kYXRhLlByb3BlcnR5VHJlZQAAAAAAAAABAwABTAAFbURhdGF0ABNMamF2YS91dGlsL0hhc2hNYXA7eHB3BAAAAAJ0ABJkYXRhYmFzZVByb3BlcnRpZXNzcQB+AAF3BAAAAAF0AANydHhzcgArY29tLmFybS5kZWJ1Zy52aWV3cy5kYXRhLkRhdGFiYXNlUHJvcGVydGllcwAAAAAAAAABAgAAeHEAfgABdwQAAAADdAAGdGFibGVzc3EAfgABdwQAAAACdAAGc3RhY2tzc3IAKGNvbS5hcm0uZGVidWcudmlld3MuZGF0YS5UYWJsZVByb3BlcnRpZXMAAAAAAAAAAQIAAHhxAH4AAXcEAAAABHQAAmlkcQB+AAt0ABBjb2x1bW5BdXRvUmVzaXplc3EAfgABdwQAAAAIdAABMHQABHRydWV0AAExcQB+ABJ0AAEycQB+ABJ0AAEzcQB+ABJ0AAItMXEAfgASdAABNHEAfgASdAABNXEAfgASdAABNnEAfgASeHQADGNvbHVtbldpZHRoc3NxAH4AAXcEAAAACHQAATB0AAI2M3QAATF0AAMxMzV0AAEydAADMjU3dAABM3QAAzEyMXQAAi0xdAACMjZ0AAE0dAADMTM1dAABNXQAAzE3NXQAATZ0AAMxMjl4dAAGY29uZmlndADQT3V0bGluZUNvbmZpZzEJOAktMQlmYWxzZQl0cnVlCTI2CS0xCXRydWUJMAl0cnVlCXRydWUJNjMJLTEJdHJ1ZQkxCXRydWUJdHJ1ZQkxMzUJLTEJdHJ1ZQkyCXRydWUJdHJ1ZQkyNTcJLTEJdHJ1ZQkzCXRydWUJdHJ1ZQkxMjEJLTEJdHJ1ZQk0CXRydWUJdHJ1ZQkxMzUJLTEJdHJ1ZQk1CXRydWUJdHJ1ZQkxNzUJLTEJdHJ1ZQk2CXRydWUJdHJ1ZQkxMjkJLTEJdHJ1ZXh0AAV0YXNrc3NxAH4ADHcEAAAABHQAAmlkcQB+AC50ABBjb2x1bW5BdXRvUmVzaXplc3EAfgABdwQAAAAJdAABMHQABHRydWV0AAExcQB+ADR0AAEycQB+ADR0AAEzcQB+ADR0AAItMXEAfgA0dAABNHEAfgA0dAABNXEAfgA0dAABNnEAfgA0dAABN3EAfgA0eHQADGNvbHVtbldpZHRoc3NxAH4AAXcEAAAACXQAATB0AAI2M3QAATF0AAMxMzV0AAEydAACODB0AAEzdAACOTZ0AAItMXQAAjI2dAABNHQAAjYwdAABNXQAAzEyNHQAATZ0AAMxMDJ0AAE3dAADMTAweHQABmNvbmZpZ3QA5U91dGxpbmVDb25maWcxCTkJLTEJZmFsc2UJdHJ1ZQkyNgktMQl0cnVlCTAJdHJ1ZQl0cnVlCTYzCS0xCXRydWUJMQl0cnVlCXRydWUJMTM1CS0xCXRydWUJMgl0cnVlCXRydWUJODAJLTEJdHJ1ZQkzCXRydWUJdHJ1ZQk5NgktMQl0cnVlCTQJdHJ1ZQl0cnVlCTYwCS0xCXRydWUJNQl0cnVlCXRydWUJMTI0CS0xCXRydWUJNgl0cnVlCXRydWUJMTAyCS0xCXRydWUJNwl0cnVlCXRydWUJMTAwCS0xCXRydWV4eHQAAmlkcQB+AAZ0AAxjdXJyZW50VGFibGV0AAZzeXN0ZW14eHQAD2N1cnJlbnREYXRhYmFzZXQAA3J0eHg="/>
 <mapAttribute key="debugger.view.DataView:DataView.ColumnWidthsMap">
 <mapEntry key="tasks" value="3,68;2,60;1,92;0,55;7,181;6,80;-1,24;5,84;4,51;9,150;8,82"/>
@@ -288,9 +282,10 @@
 <booleanAttribute key="linuxOS" value="false"/>
 <stringAttribute key="model_params" value=""/>
 <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+<stringAttribute key="os_extension_id" value="com.arm.debug.os.rtx"/>
 <stringAttribute key="rddi_type" value="rddi-debug-rvi"/>
 <booleanAttribute key="runAfterConnect" value="false"/>
-<stringAttribute key="rvi_address" value="P1012102:Keil ULINKpro"/>
+<stringAttribute key="rvi_address" value="D1342055:Keil ULINKpro D"/>
 <listAttribute key="scripts_view_expanded_nodes">
 <listEntry value="#Jython"/>
 </listAttribute>

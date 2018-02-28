@@ -41,7 +41,7 @@ OBJS += \
 %.o: ../%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM C Compiler 5'
-	armcc --cpu=Cortex-A9 --thumb --apcs=/interwork -D__MICROLIB -D__FPU_PRESENT -I"C:\Users\ryutan01\Documents\DS-5 Workshop 1213\barman-CMSIS_RTOS_RTX\RTOS\RTX\SRC" -I"C:\Users\ryutan01\Documents\DS-5 Workshop 1213\barman-CMSIS_RTOS_RTX\RTOS\RTX\INC" -I"C:\Users\ryutan01\Documents\DS-5 Workshop 1213\barman-CMSIS_RTOS_RTX\Include" -I"C:\Users\ryutan01\Documents\DS-5 Workshop 1213\barman-CMSIS_RTOS_RTX\RTOS\RTX\Boards\Renesas\RZ_A1H_GENMAI" -I"C:\Users\ryutan01\Documents\DS-5 Workshop 1213\barman-CMSIS_RTOS_RTX\RTOS\RTX\Boards\Renesas\RZ_A1H_GENMAI\INC" -I"C:/Users/ryutan01/Documents/DS-5 Workshop 1213/RTX_Renesas_NEON_MNIST" --gnu -O2 -Otime -g --diag_warning=optimizations --md --depend_format=unix_escaped --no_depend_system_headers -c -o "$@" "$<"
+	armcc --cpu=Cortex-A9 --thumb --apcs=/interwork -D__MICROLIB -D__FPU_PRESENT -I"C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\barman-CMSIS_RTOS_RTX\RTOS\RTX\SRC" -I"C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\barman-CMSIS_RTOS_RTX\RTOS\RTX\INC" -I"C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\barman-CMSIS_RTOS_RTX\Include" -I"C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\barman-CMSIS_RTOS_RTX\RTOS\RTX\Boards\Renesas\RZ_A1H_GENMAI" -I"C:\Users\ryutan01\Documents\DS-5 v0528 Workspace\barman-CMSIS_RTOS_RTX\RTOS\RTX\Boards\Renesas\RZ_A1H_GENMAI\INC" -I"C:/Users/ryutan01/Documents/DS-5 v0528 Workspace/RTX_Renesas_NEON_MNIST" --gnu -O2 -Otime -g --diag_warning=optimizations --md --depend_format=unix_escaped --no_depend_system_headers -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
